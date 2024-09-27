@@ -42,7 +42,7 @@ A continuación te mostramos un ejemplo básico de cómo integrar el **Sena Acce
 
 ```jsx
 import React from "react";
-import { AccessibilityWidget } from "sena-accessibility-widget";
+import { AccessibilityWidget } from "sena-accessibility";
 
 function App() {
     return (
