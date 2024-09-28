@@ -22,38 +22,55 @@ export const useFontSizeChange = (settings) => {
             break;
     }
 
-    const titles = document.querySelectorAll(".text--title, h1, h2");
-    const subTitles = document.querySelectorAll(
-        ".text--subtitle, h3, h4, h5, h6"
-    );
-    const extraLarges = document.querySelectorAll(".text--extralarge");
-    const larges = document.querySelectorAll(".text--large");
-    const normals = document.querySelectorAll(
-        ".text--normal, p, span, a, li, td, th, label, select, input, button, footer, header, .widget__item-text"
-    );
-    const smalls = document.querySelectorAll(".text--small");
-
-    titles.forEach((title) => {
-        title.style.fontSize = `${textScale * 1.4}rem`;
+    document.querySelectorAll(".text-xs").forEach((text) => {
+        text.style.fontSize = `${textScale * 0.75}rem`;
     });
 
-    subTitles.forEach((subTitle) => {
-        subTitle.style.fontSize = `${textScale * 1.3}rem`;
+    document.querySelectorAll(".text-sm").forEach((text) => {
+        text.style.fontSize = `${textScale * 0.875}rem`;
     });
 
-    extraLarges.forEach((extraLarge) => {
-        extraLarge.style.fontSize = `${textScale * 1.2}rem`;
+    document.querySelectorAll(".text-base, p, span, a, li, td, th, label, select, input, button, footer, header").forEach((text) => {
+        text.style.fontSize = `${textScale * 1}rem`;
     });
 
-    larges.forEach((large) => {
-        large.style.fontSize = `${textScale * 1.1}rem`;
+    document.querySelectorAll(".text-lg, h3, h4, h5, h6").forEach((text) => {
+        text.style.fontSize = `${textScale * 1.125}rem`;
     });
 
-    normals.forEach((normal) => {
-        normal.style.fontSize = `${textScale * 1}rem`;
+    document.querySelectorAll(".text-xl, h1, h2").forEach((text) => {
+        text.style.fontSize = `${textScale * 1.25}rem`;
     });
 
-    smalls.forEach((small) => {
-        small.style.fontSize = `${textScale * 0.8}rem`;
+    document.querySelectorAll(".text-2xl").forEach((text) => {
+        text.style.fontSize = `${textScale * 1.5}rem`;
+    });
+
+    document.querySelectorAll(".text-3xl").forEach((text) => {
+        text.style.fontSize = `${textScale * 1.875}rem`;
+    });
+
+    document.querySelectorAll(".text-4xl").forEach((text) => {
+        text.style.fontSize = `${textScale * 2.25}rem`;
+    });
+
+    document.querySelectorAll(".text-5xl").forEach((text) => {
+        text.style.fontSize = `${textScale * 3}rem`;
+    });
+
+    document.querySelectorAll(".text-6xl").forEach((text) => {
+        text.style.fontSize = `${textScale * 3.75}rem`;
+    });
+
+    document.querySelectorAll(".text-7xl").forEach((text) => {
+        text.style.fontSize = `${textScale * 4.5}rem`;
+    });
+
+    document.querySelectorAll(".text-8xl").forEach((text) => {
+        text.style.fontSize = `${textScale * 6}rem`;
+    });
+
+    document.querySelectorAll(".text-9xl").forEach((text) => {
+        text.style.fontSize = `${textScale * 8}rem`;
     });
 };

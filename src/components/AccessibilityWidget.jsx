@@ -91,7 +91,7 @@ function AccessibilityWidgetContent({ theme, styles }) {
             <article className="widget">
                 {/* Widget header */}
                 <div className="widget__header">
-                    <h3>Menú de accesibilidad SENA</h3>
+                    <h3 className="text-2xl">Menú de accesibilidad SENA</h3>
                     <hr />
                 </div>
 
