@@ -3,21 +3,22 @@ export const useCursorChange = (settings) => {
 
     switch (cursor) {
         case "white":
+            document.querySelectorAll(".mask__overlay").forEach((overlay) => overlay.classList.add("hidden"));
             document.body.style.cursor = "url(/src/assets/cursors/white-cursor.svg), auto";
             break;
         case "black":
+            document.querySelectorAll(".mask__overlay").forEach((overlay) => overlay.classList.add("hidden"));
             document.body.style.cursor = "url(/src/assets/cursors/black-cursor.svg), auto";
             break;
-        // case "large":
-        //     document.body.style.cursor = "url(/cursors/large.png), auto";
-        //     break;
-        // case "mask":
-        //     document.body.style.cursor = "url(/cursors/mask.png), auto";
-        //     break;
-        // case "readGuide":
-        //     document.body.style.cursor = "url(/cursors/readGuide.png), auto";
-        //     break;
+        case "mask":
+            document.querySelectorAll(".mask__overlay").forEach((overlay) => overlay.classList.remove("hidden"));
+            document.body.style.cursor = "auto";
+            break;
+        case "readGuide":
+            document.querySelectorAll(".mask__overlay").forEach((overlay) => overlay.classList.add("hidden"));
+            break;
         default:
+            document.querySelectorAll(".mask__overlay").forEach((overlay) => overlay.classList.add("hidden"));
             document.body.style.cursor = "auto";
             break;
     }

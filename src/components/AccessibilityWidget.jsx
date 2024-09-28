@@ -25,11 +25,13 @@ import { useCursorChange } from "../hooks/useCursorChange";
 import { useHideImages } from "../hooks/useHideImages";
 import { usehighlightLinks } from "../hooks/useHighlightLinks";
 import { useWidgetPositionChange, useWidgetSizeChange } from "../hooks/useWidgetConfig";
+import { MaskCursor } from "../components/MaskCursor";
 
 export function AccessibilityWidget({ theme, tools, styles }) {
     return (
         <AccessibilityProvider selectedTools={tools}>
             <AccessibilityWidgetContent theme={theme} styles={styles} />
+            <MaskCursor />
         </AccessibilityProvider>
     );
 }
@@ -61,7 +63,7 @@ function AccessibilityWidgetContent({ theme, styles }) {
         usehighlightLinks(settings);
         useWidgetSizeChange(settings);
         useWidgetPositionChange(settings);
-    }, [settings]);
+    }, [settings, window.location.pathname]);
 
     return (
         <div

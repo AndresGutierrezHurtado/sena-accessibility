@@ -6,6 +6,11 @@
 
 body {
     font-family: system-ui, sans-serif;
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none;
 }
 
 .widget__button {
@@ -257,4 +262,12 @@ body {
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.mask__overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.7);
 }
