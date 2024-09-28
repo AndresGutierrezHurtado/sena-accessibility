@@ -3,21 +3,44 @@ export const useContrastChange = (settings) => {
         (setting) => setting.id === "contrast"
     ).currentValue;
 
+    const colorSaturation = settings.find(
+        (setting) => setting.id === "color-saturation"
+    ).currentValue;
+
+    let graphicFilter = "";
+
     switch (contrast) {
         case "low":
-            document.body.style.filter = "contrast(0.5)";
+            graphicFilter = "contrast(0.5)";
             break;
         case "high":
-            document.body.style.filter = "contrast(1.5)";
+            graphicFilter = "contrast(1.5)";
             break;
         case "ultra":
-            document.body.style.filter = "contrast(2)";
+            graphicFilter = "contrast(2)";
             break;
         case "inverted":
-            document.body.style.filter = "invert(1)";
+            graphicFilter = "invert(1)";
             break;
         default:
-            document.body.style.filter = "none";
+            graphicFilter = "contrast(1)";
             break;
     }
-}            
+
+    switch (colorSaturation) {
+        case "low":
+            graphicFilter += " saturate(0.5)";
+            break;
+        case "high":
+            graphicFilter += " saturate(1.5)";
+            break;
+        case "ultra":
+            graphicFilter += " saturate(2)";
+            break;
+        default:
+            graphicFilter += " saturate(1)";
+            break;
+    }
+
+    document.body.style.filter = graphicFilter;
+};

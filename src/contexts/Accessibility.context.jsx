@@ -72,7 +72,7 @@ const toolsList = [
         id: "color-saturation",
         icon: () => <Icons.colorSaturationIcon />,
         text: "Saturación de color",
-        options: ["normal", "low", "high", "inverted"],
+        options: ["low", "normal", "high", "ultra"],
         defaultValue: "normal",
         currentValue: "normal",
     },
