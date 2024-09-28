@@ -16,9 +16,9 @@ const toolsList = [
         id: "cursor",
         icon: () => <Icons.CursorIcon />,
         text: "Cursor",
-        options: ["white", "black", "large", "mask", "readGuide"],
-        defaultValue: "white",
-        currentValue: "white",
+        options: ["auto", "white", "black", "mask", "readGuide"],
+        defaultValue: "auto",
+        currentValue: "auto",
     },
     {
         id: "text-size",

@@ -21,6 +21,7 @@ import { useLineHeightChange } from "../hooks/useLineHeightChange";
 import { useLetterSpacingChange } from "../hooks/useLetterSpacingChange";
 import { useTextAlignChange } from "../hooks/useTextAlignChange";
 import { useContrastChange } from "../hooks/useContrastChange";
+import { useCursorChange } from "../hooks/useCursorChange";
 
 export function AccessibilityWidget({ theme, tools, styles }) {
     return (
@@ -52,6 +53,7 @@ function AccessibilityWidgetContent({ theme, styles }) {
         useLetterSpacingChange(settings);
         useTextAlignChange(settings);
         useContrastChange(settings);
+        useCursorChange(settings);
     }, [settings]);
 
     return (
@@ -148,7 +150,7 @@ AccessibilityWidget.defaultProps = {
         },
         {
             id: "cursor",
-            defaultValue: "normal",
+            defaultValue: "auto",
         },
         {
             id: "highlight-links",
