@@ -44,8 +44,8 @@ function AccessibilityWidgetContent({ theme, styles }) {
     const { settings, updateSettings, defaultSettings } =
         useAccessibilityContext();
 
+    useReadText();
     useEffect(() => {
-        useReadText(settings);
         useFontSizeChange(settings);
         useFontStyleChange(settings);
         useLineHeightChange(settings);
@@ -55,7 +55,11 @@ function AccessibilityWidgetContent({ theme, styles }) {
     }, [settings]);
 
     return (
-        <div className={`widget__container ${theme === "dark" ? "widget--dark" : ""}`}>
+        <div
+            className={`widget__container ${
+                theme === "dark" ? "widget--dark" : ""
+            }`}
+        >
             <input type="checkbox" id="widget__toggle" />
 
             <button

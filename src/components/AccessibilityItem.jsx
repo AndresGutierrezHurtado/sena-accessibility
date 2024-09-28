@@ -26,7 +26,7 @@ export default function AccessibilityItem({ item, useAccessibilityContext }) {
         <div className={`widget__item ${currentValue !== defaultValue && "widget__item--active"}`} onClick={() => handleClick(item)}>
             <div className="widget__item-content">
                 <div className="widget__item-icon">{IconComponent}</div>
-                <div className="widget__item-text">{text}</div>
+                <p className="widget__item-text">{text}</p>
             </div>
             <div className="widget__item-footer">
                 {currentValue !== defaultValue && currentValue !== true &&

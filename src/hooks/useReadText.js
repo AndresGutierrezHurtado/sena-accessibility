@@ -1,34 +1,27 @@
-export const useReadText = (settings) => {
-    const readText = settings.find(
-        (setting) => setting.id === "screen-reader"
-    ).currentValue;
+import { useEffect } from "react";
+import { useAccessibilityContext } from "../contexts/Accessibility.context";
 
-    const speak = () => {
-        if (typeof speechSynthesis === "undefined") return;
-        if (!readText) return;
+export const useReadText = () => {
+    const { settings } = useAccessibilityContext();
 
-        let voices = [];
+    useEffect(() => {
+        if (typeof window.speechSynthesis === "undefined") return;
 
-        const populateVoiceList = () => {
-            voices = speechSynthesis.getVoices();
-        };
+        const readTextSetting = settings.find(
+            (setting) => setting.id === "screen-reader"
+        )?.currentValue;
 
-        populateVoiceList();
-        if (speechSynthesis.onvoiceschanged !== undefined) {
-            speechSynthesis.onvoiceschanged = populateVoiceList;
-        }
-
+        // Voice configuration
         const speakText = (text) => {
-            const utterThis = new SpeechSynthesisUtterance(text);
-            utterThis.voice =
-                voices.find((voice) => voice.default) || voices[0];
-            speechSynthesis.speak(utterThis);
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.voice = window.speechSynthesis.getVoices()[0];
+            utterance.lang = "es-CO";
+            utterance.rate = 1;
+            utterance.pitch = 1;
+            window.speechSynthesis.speak(utterance);
         };
 
-        const textElements = document.querySelectorAll(
-            "p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, label, select, input, button, footer, header, .widget__item-text"
-        );
-
+        // Add and remove mouse over listeners
         const handleMouseOver = (event) => {
             let text;
             if (event.target.tagName.toLowerCase() === "img") {
@@ -40,25 +33,41 @@ export const useReadText = (settings) => {
                 text = event.target.textContent;
             }
 
-            if (speechSynthesis.speaking) {
-                speechSynthesis.cancel();
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
             }
+
             speakText(text);
         };
 
-        // Agregamos los eventos a los elementos de texto
-        textElements.forEach((element) => {
-            element.addEventListener("mouseover", handleMouseOver);
-        });
+        const addMouseOverListeners = () => {
+            const textElements = document.querySelectorAll(
+                "p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, label, select, input, button, footer, header"
+            );
+            textElements.forEach((element) => {
+                element.addEventListener("mouseover", handleMouseOver);
+            });
+        };
 
-        return () => {
+        const removeMouseOverListeners = () => {
+            const textElements = document.querySelectorAll(
+                "p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, label, select, input, button, footer, header"
+            );
             textElements.forEach((element) => {
                 element.removeEventListener("mouseover", handleMouseOver);
             });
-            speechSynthesis.cancel();
         };
-    };
 
-    const cleanup = speak();
-    return cleanup;
+        if (readTextSetting) {
+            addMouseOverListeners();
+        } else {
+            window.speechSynthesis.cancel();
+            removeMouseOverListeners();
+        }
+
+        return () => {
+            window.speechSynthesis.cancel();
+            removeMouseOverListeners();
+        };
+    }, [settings]);
 };
