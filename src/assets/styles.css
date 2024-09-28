@@ -71,6 +71,10 @@ body {
     }
 }
 
+.widget--right {
+    right: 0;
+}
+
 .widget--dark {
     --base: #000;
     --base-content: #fff;
@@ -226,4 +230,15 @@ body {
         border-radius: 0px 10px 10px 0px;
         flex-grow: 1;
     }
+}
+
+.highlighted-link {
+    text-decoration: underline;
+    color: var(--primary-content) !important;
+    background-color: var(--primary) !important;
+    display: inline-block;
+    padding: 5px 7px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
 }

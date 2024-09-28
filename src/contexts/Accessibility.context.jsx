@@ -101,7 +101,7 @@ const toolsList = [
         currentValue: "medium",
     },
     {
-        id: "sidebar-position",
+        id: "widget-position",
         icon: () => <Icons.widgetPositionIcon />,
         text: "Posición del sidebar",
         options: ["left", "right"],

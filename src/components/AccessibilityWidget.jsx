@@ -22,6 +22,9 @@ import { useLetterSpacingChange } from "../hooks/useLetterSpacingChange";
 import { useTextAlignChange } from "../hooks/useTextAlignChange";
 import { useContrastChange } from "../hooks/useContrastChange";
 import { useCursorChange } from "../hooks/useCursorChange";
+import { useHideImages } from "../hooks/useHideImages";
+import { usehighlightLinks } from "../hooks/useHighlightLinks";
+import { useWidgetPositionChange, useWidgetSizeChange } from "../hooks/useWidgetConfig";
 
 export function AccessibilityWidget({ theme, tools, styles }) {
     return (
@@ -54,6 +57,10 @@ function AccessibilityWidgetContent({ theme, styles }) {
         useTextAlignChange(settings);
         useContrastChange(settings);
         useCursorChange(settings);
+        useHideImages(settings);
+        usehighlightLinks(settings);
+        useWidgetSizeChange(settings);
+        useWidgetPositionChange(settings);
     }, [settings]);
 
     return (
@@ -161,7 +168,7 @@ AccessibilityWidget.defaultProps = {
             defaultValue: "medium",
         },
         {
-            id: "sidebar-position",
+            id: "widget-position",
             defaultValue: "left",
         },
 
