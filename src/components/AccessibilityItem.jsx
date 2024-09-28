@@ -1,4 +1,5 @@
 import React from "react";
+import * as Icons from "../assets/icons";
 
 export default function AccessibilityItem({ item, useAccessibilityContext }) {
     const { icon, text, options, currentValue, defaultValue, id } = item;
@@ -23,15 +24,26 @@ export default function AccessibilityItem({ item, useAccessibilityContext }) {
     };
 
     return (
-        <div className={`widget__item ${currentValue !== defaultValue && "widget__item--active"}`} onClick={() => handleClick(item)}>
+        <div
+            className={`widget__item ${
+                currentValue !== defaultValue && "widget__item--active"
+            }`}
+            onClick={() => handleClick(item)}
+        >
+            {currentValue !== defaultValue && <div className="badge"><Icons.checkIcon color="#fff" size={10} /></div>}
             <div className="widget__item-content">
                 <div className="widget__item-icon">{IconComponent}</div>
                 <p className="widget__item-text">{text}</p>
             </div>
             <div className="widget__item-footer">
-                {currentValue !== defaultValue && currentValue !== true &&
+                {currentValue !== defaultValue &&
+                    currentValue !== true &&
                     options.map((option, index) => (
-                        <span className={`widget__item-indicator ${option === currentValue ? "active" : ""}`}></span>
+                        <span
+                            className={`widget__item-indicator ${
+                                option === currentValue ? "active" : ""
+                            }`}
+                        ></span>
                     ))}
             </div>
         </div>
