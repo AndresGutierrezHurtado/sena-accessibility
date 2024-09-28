@@ -26,12 +26,14 @@ import { useHideImages } from "../hooks/useHideImages";
 import { usehighlightLinks } from "../hooks/useHighlightLinks";
 import { useWidgetPositionChange, useWidgetSizeChange } from "../hooks/useWidgetConfig";
 import { MaskCursor } from "../components/MaskCursor";
+import { ReadGuideCursor } from "./ReadGuideCursor";
 
 export function AccessibilityWidget({ theme, tools, styles }) {
     return (
         <AccessibilityProvider selectedTools={tools}>
             <AccessibilityWidgetContent theme={theme} styles={styles} />
             <MaskCursor />
+            <ReadGuideCursor />
         </AccessibilityProvider>
     );
 }

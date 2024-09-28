@@ -271,3 +271,26 @@ body {
     height: auto;
     background-color: rgba(0, 0, 0, 0.7);
 }
+
+.read-guide {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background-color: var(--primary);
+    border-top: 3px solid var(--base-content);
+    border-bottom: 3px solid var(--base-content);
+}
+
+.read-guide__cursor {
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary);
+    border: var(--base);
+    rotate: 45deg;
+    border-top: 3px solid var(--base-content);
+    border-left: 3px solid var(--base-content);
+    
+    position: absolute;
+    transform: translateX(-17px);
+}

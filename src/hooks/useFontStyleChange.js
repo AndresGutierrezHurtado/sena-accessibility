@@ -15,7 +15,7 @@ export const useFontStyleChange = (settings) => {
             document.body.style.fontFamily = "monospace";
             break;
         default:
-            document.body.style.fontFamily = "system-ui, sans-serif";
+            document.body.style.removeProperty("font-family");
             break;
     }
 }

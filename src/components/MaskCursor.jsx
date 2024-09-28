@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export const MaskCursor = () => {
-    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: window.innerHeight / 2 });
 
     const handleMouseMove = (event) => {
         const { clientX, clientY } = event;
