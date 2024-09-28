@@ -3,21 +3,11 @@ export const useTextAlignChange = (settings) => {
         (setting) => setting.id === "text-alignment"
     ).currentValue;
 
-    switch (textAlign) {
-        case "left":
-            document.body.style.textAlign = "left";
-            break;
-        case "center":
-            document.body.style.textAlign = "center";
-            break;
-        case "right":
-            document.body.style.textAlign = "right";
-            break;
-        case "justify":
-            document.body.style.textAlign = "justify";
-            break;
-        default:
-            document.body.style.textAlign = "left";
-            break;
-    }
-}
+    const texts = document.querySelectorAll(
+        "p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, label, select, input, button, footer, header, code, pre, *"
+    );
+
+    texts.forEach((text) => {
+        text.style.textAlign = textAlign;
+    });
+};
