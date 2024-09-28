@@ -64,7 +64,7 @@ const toolsList = [
         id: "contrast",
         icon: () => <Icons.ContrastIcon />,
         text: "Contraste",
-        options: ["normal", "low", "high", "ultra", "inverted"],
+        options: ["low", "normal", "high", "ultra", "inverted"],
         defaultValue: "normal",
         currentValue: "normal",
     },
