@@ -3,15 +3,17 @@ import PropTypes from "prop-types";
 import "../assets/styles.css";
 
 // Icons
-import * as Icons from "../assets/icons";
+import * as Icons from "../assets/icons.jsx";
 
 // Context
 import AccessibilityProvider, {
     useAccessibilityContext,
-} from "../contexts/Accessibility.context";
+} from "../contexts/Accessibility.context.jsx";
 
 // Components
-import AccessibilityItem from "./AccessibilityItem";
+import AccessibilityItem from "./AccessibilityItem.jsx";
+import { MaskCursor } from "../components/MaskCursor.jsx";
+import { ReadGuideCursor } from "./ReadGuideCursor.jsx";
 
 // Hooks
 import { useReadText } from "../hooks/useReadText";
@@ -25,8 +27,6 @@ import { useCursorChange } from "../hooks/useCursorChange";
 import { useHideImages } from "../hooks/useHideImages";
 import { usehighlightLinks } from "../hooks/useHighlightLinks";
 import { useWidgetPositionChange, useWidgetSizeChange } from "../hooks/useWidgetConfig";
-import { MaskCursor } from "../components/MaskCursor";
-import { ReadGuideCursor } from "./ReadGuideCursor";
 
 export function AccessibilityWidget({ theme, tools, styles }) {
     return (

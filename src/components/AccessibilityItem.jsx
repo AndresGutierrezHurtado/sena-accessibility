@@ -1,5 +1,5 @@
 import React from "react";
-import * as Icons from "../assets/icons";
+import * as Icons from "../assets/icons.jsx";
 
 export default function AccessibilityItem({ item, useAccessibilityContext }) {
     const { icon, text, options, currentValue, defaultValue, id } = item;

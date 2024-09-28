@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import * as Icons from "../assets/icons";
+import * as Icons from "../assets/icons.jsx";
 
 export const AccessibilityContext = createContext();
 

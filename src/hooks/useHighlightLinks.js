@@ -1,5 +1,3 @@
-import { background } from "storybook/internal/theming";
-
 export const usehighlightLinks = (settings) => {
 
     const highlightLinks = settings.find(

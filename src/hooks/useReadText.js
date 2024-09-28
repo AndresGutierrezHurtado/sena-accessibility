@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAccessibilityContext } from "../contexts/Accessibility.context";
+import { useAccessibilityContext } from "../contexts/Accessibility.context.jsx";
 
 export const useReadText = () => {
     const { settings } = useAccessibilityContext();
