@@ -148,14 +148,6 @@ AccessibilityWidget.defaultProps = {
     theme: "light",
     tools: [
         {
-            id: "text-size",
-            defaultValue: "md",
-        },
-        {
-            id: "contrast",
-            defaultValue: "normal",
-        },
-        {
             id: "screen-reader",
             defaultValue: false,
         },
@@ -164,19 +156,9 @@ AccessibilityWidget.defaultProps = {
             defaultValue: "auto",
         },
         {
-            id: "highlight-links",
-            defaultValue: false,
+            id: "text-size",
+            defaultValue: "normal",
         },
-        {
-            id: "widget-size",
-            defaultValue: "medium",
-        },
-        {
-            id: "widget-position",
-            defaultValue: "left",
-        },
-
-        // All of them
         {
             id: "text-font",
             defaultValue: "current",
@@ -191,7 +173,11 @@ AccessibilityWidget.defaultProps = {
         },
         {
             id: "text-alignment",
-            defaultValue: "left",
+            defaultValue: "auto",
+        },
+        {
+            id: "contrast",
+            defaultValue: "normal",
         },
         {
             id: "color-saturation",
@@ -204,6 +190,14 @@ AccessibilityWidget.defaultProps = {
         {
             id: "highlighted-links",
             defaultValue: false,
+        },
+        {
+            id: "widget-size",
+            defaultValue: "medium",
+        },
+        {
+            id: "widget-position",
+            defaultValue: "left",
         },
     ],
     styles: {

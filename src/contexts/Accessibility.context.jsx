@@ -1,12 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import * as Icons from "../assets/icons.jsx";
 
 export const AccessibilityContext = createContext();
 
 const toolsList = [
     {
         id: "screen-reader",
-        icon: () => <Icons.ScreenReaderIcon />,
+        icon: "ScreenReaderIcon",
         text: "Lector de pantalla",
         options: [false, true],
         defaultValue: false,
@@ -14,7 +13,7 @@ const toolsList = [
     },
     {
         id: "cursor",
-        icon: () => <Icons.CursorIcon />,
+        icon: "CursorIcon",
         text: "Cursor",
         options: ["auto", "white", "black", "mask", "readGuide"],
         defaultValue: "auto",
@@ -22,7 +21,7 @@ const toolsList = [
     },
     {
         id: "text-size",
-        icon: () => <Icons.FontSizeIcon />,
+        icon: "FontSizeIcon",
         text: "Tamaño de texto",
         options: ["small", "normal", "large", "extralarge", "giant"],
         defaultValue: "normal",
@@ -30,7 +29,7 @@ const toolsList = [
     },
     {
         id: "text-font",
-        icon: () => <Icons.fontStyleIcon />,
+        icon: "fontStyleIcon",
         text: "Fuente de texto",
         options: ["current", "font-sans", "font-serif", "font-mono"],
         defaultValue: "current",
@@ -38,7 +37,7 @@ const toolsList = [
     },
     {
         id: "text-line-height",
-        icon: () => <Icons.lineHeightIcon />,
+        icon: "lineHeightIcon",
         text: "Altura de linea de texto",
         options: ["normal", "loose", "extraloose"],
         defaultValue: "normal",
@@ -46,7 +45,7 @@ const toolsList = [
     },
     {
         id: "text-spacing",
-        icon: () => <Icons.letterSpacingIcon />,
+        icon: "letterSpacingIcon",
         text: "Espaciado de texto",
         options: ["normal", "loose", "extraloose"],
         defaultValue: "normal",
@@ -54,15 +53,15 @@ const toolsList = [
     },
     {
         id: "text-alignment",
-        icon: () => <Icons.textAlignIcon />,
+        icon: "textAlignIcon",
         text: "Alineamiento de texto",
-        options: ["left", "center", "right", "justify"],
-        defaultValue: "left",
-        currentValue: "left",
+        options: ["auto", "left", "center", "right", "justify"],
+        defaultValue: "auto",
+        currentValue: "auto",
     },
     {
         id: "contrast",
-        icon: () => <Icons.ContrastIcon />,
+        icon: "ContrastIcon",
         text: "Contraste",
         options: ["low", "normal", "high", "ultra", "inverted"],
         defaultValue: "normal",
@@ -70,7 +69,7 @@ const toolsList = [
     },
     {
         id: "color-saturation",
-        icon: () => <Icons.colorSaturationIcon />,
+        icon: "colorSaturationIcon",
         text: "Saturación de color",
         options: ["low", "normal", "high", "ultra"],
         defaultValue: "normal",
@@ -78,7 +77,7 @@ const toolsList = [
     },
     {
         id: "hide-images",
-        icon: () => <Icons.HideImagesIcon />,
+        icon: "HideImagesIcon",
         text: "Ocultar imágenes",
         options: [false, true],
         defaultValue: false,
@@ -86,7 +85,7 @@ const toolsList = [
     },
     {
         id: "highlighted-links",
-        icon: () => <Icons.highlightLinksIcon />,
+        icon: "highlightLinksIcon",
         text: "Enlaces destacados",
         options: [false, true],
         defaultValue: false,
@@ -94,7 +93,7 @@ const toolsList = [
     },
     {
         id: "widget-size",
-        icon: () => <Icons.widgetSizeIcon />,
+        icon: "widgetSizeIcon",
         text: "Tamaño del widget",
         options: ["small", "medium", "large"],
         defaultValue: "medium",
@@ -102,7 +101,7 @@ const toolsList = [
     },
     {
         id: "widget-position",
-        icon: () => <Icons.widgetPositionIcon />,
+        icon: "widgetPositionIcon",
         text: "Posición del sidebar",
         options: ["left", "right"],
         defaultValue: "left",

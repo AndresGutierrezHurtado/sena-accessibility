@@ -24,9 +24,11 @@ export const useWidgetPositionChange = (settings) => {
     switch (widgetPosition) {
         case "left":
             document.querySelector(".widget").classList.remove("widget--right");
+            document.querySelector(".widget").classList.add("widget--left");
             break;
         case "right":
             document.querySelector(".widget").classList.add("widget--right");
+            document.querySelector(".widget").classList.remove("widget--left");
             break;
     }
 }

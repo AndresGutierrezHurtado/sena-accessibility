@@ -1,21 +1,32 @@
 export const useFontStyleChange = (settings) => {
-
     const fontStyle = settings.find(
         (setting) => setting.id === "text-font"
     ).currentValue;
 
+    const texts = document.querySelectorAll(
+        "p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, label, select, input, button, footer, header, code, pre"
+    );
+
     switch (fontStyle) {
         case "font-sans":
-            document.body.style.fontFamily = "sans-serif";
+            texts.forEach((text) => {
+                text.style.fontFamily = "sans-serif";
+            });
             break;
         case "font-serif":
-            document.body.style.fontFamily = "serif";
+            texts.forEach((text) => {
+                text.style.fontFamily = "serif";
+            });
             break;
         case "font-mono":
-            document.body.style.fontFamily = "monospace";
+            texts.forEach((text) => {
+                text.style.fontFamily = "monospace";
+            });
             break;
         default:
-            document.body.style.removeProperty("font-family");
+            texts.forEach((text) => {
+                text.style.removeProperty("font-family");
+            });
             break;
     }
-}
+};

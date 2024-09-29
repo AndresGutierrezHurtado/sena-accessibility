@@ -42,5 +42,5 @@ export const useContrastChange = (settings) => {
             break;
     }
 
-    document.body.style.filter = graphicFilter;
+    document.querySelector("html").style.filter = graphicFilter;
 };
