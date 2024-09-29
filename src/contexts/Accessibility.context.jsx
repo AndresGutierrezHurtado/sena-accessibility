@@ -119,8 +119,6 @@ export default function AccessibilityProvider({ children, selectedTools }) {
 
     const [settings, setSettings] = useState(defaultSettings);
 
-    localStorage.removeItem("settings");
-
     // Guarda los valores de configuración en localStorage
     const updateSettings = (newConfig) => {
         localStorage.setItem("settings", JSON.stringify(newConfig));
