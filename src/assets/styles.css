@@ -36,10 +36,6 @@ body {
     cursor: pointer;
     z-index: 10001;
 
-    & > svg {
-        fill: var(--secondary);
-    }
-
     &:active {
         scale: 0.85;
     }

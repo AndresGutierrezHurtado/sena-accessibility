@@ -81,7 +81,7 @@ function AccessibilityWidgetContent({ theme, styles }) {
                     document.getElementById("widget__toggle").click()
                 }
             >
-                <Icons.AccessibilityIcon color={styles.secondary} size={40} />
+                <Icons.AccessibilityIcon color={styles.secondary} size={48} />
             </button>
 
             <div
