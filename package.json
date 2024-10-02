@@ -2,7 +2,7 @@
   "name": "sena-accessibility",
   "author": "SENA",
   "license": "MIT",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This is a React components library to improve web acessibility",
   "keywords": [
     "accessibility",

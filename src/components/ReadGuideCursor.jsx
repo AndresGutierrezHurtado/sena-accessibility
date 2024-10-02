@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 export const ReadGuideCursor = () => {
-    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: window.innerHeight / 2 });
+    const [cursorPosition, setCursorPosition] = useState({ x: (window.innerWidth / 2), y: (window.innerHeight / 2) });
 
     const handleMouseMove = (event) => {
         const { clientX, clientY } = event;
+        if (navigator.maxTouchPoints > 0) return;
         setCursorPosition({ x: clientX, y: clientY });
     };
 
