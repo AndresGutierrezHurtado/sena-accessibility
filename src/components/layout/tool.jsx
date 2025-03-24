@@ -10,7 +10,7 @@ export default function Tool({ tool, update, t }) {
         <div
             key={tool.id}
             onClick={() => update(tool.id)}
-            className="bg-white p-5 rounded-lg flex flex-col items-center justify-center gap-2 font-medium leading-[1rem] text-center cursor-pointer relative"
+            className="bg-white p-5 rounded-lg flex flex-col items-center justify-center gap-2 font-medium leading-tight text-center cursor-pointer relative"
             style={{ border: isActive ? "2px solid var(--color-secondary)" : "", color: isActive ? "var(--color-secondary)" : "var(--color-base-content)" }}
         >
             <Icon size={40} />

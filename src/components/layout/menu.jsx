@@ -14,8 +14,12 @@ export default function Menu({ isOpen, setIsOpen }) {
 
     return (
         <div
-            className="fixed top-0 bottom-0 left-0 w-full max-w-[500px] bg-primary duration-300 flex flex-col"
-            style={{ transform: `translateX(${true ? "0" : "-100%"})` }}
+            className="fixed top-0 bottom-0 w-full max-w-[var(--widget-size,500px)] bg-primary duration-300 flex flex-col"
+            style={{
+                transform: `translateX(${isOpen ? "0" : "var(--widget-position)"})`,
+                left: "var(--widget-left)",
+                right: "var(--widget-right)",
+            }}
         >
             <header className="w-full flex justify-between items-center p-5 text-primary-content">
                 <h2 className="text-2xl font-bold tracking-[0.3px]">{t("title")}</h2>
@@ -66,7 +70,13 @@ export default function Menu({ isOpen, setIsOpen }) {
                     <hr />
                     <section className="w-full flex flex-row gap-5">
                         {lists.profiles.map((profile) => (
-                            <Profile key={profile.key} currentProfile={values.profile} update={update.updateProfileValue} profile={profile} t={t} />
+                            <Profile
+                                key={profile.key}
+                                currentProfile={values.profile}
+                                update={update.updateProfileValue}
+                                profile={profile}
+                                t={t}
+                            />
                         ))}
                     </section>
                     <hr />

@@ -302,7 +302,7 @@ export const FrenchIcon = (props) => (
         viewBox="0 0 36 36"
         aria-hidden="true"
         role="img"
-        class="iconify iconify--twemoji"
+        className="iconify iconify--twemoji"
         preserveAspectRatio="xMidYMid meet"
         {...props}
     >
@@ -321,7 +321,7 @@ export const GermanIcon = (props) => (
         viewBox="0 0 36 36"
         aria-hidden="true"
         role="img"
-        class="iconify iconify--twemoji"
+        className="iconify iconify--twemoji"
         preserveAspectRatio="xMidYMid meet"
         {...props}
     >
@@ -340,7 +340,7 @@ export const ItalianIcon = (props) => (
         viewBox="0 0 36 36"
         aria-hidden="true"
         role="img"
-        class="iconify iconify--twemoji"
+        className="iconify iconify--twemoji"
         preserveAspectRatio="xMidYMid meet"
         {...props}
     >
@@ -359,7 +359,7 @@ export const PortugueseIcon = (props) => (
         viewBox="0 0 36 36"
         aria-hidden="true"
         role="img"
-        class="iconify iconify--twemoji"
+        className="iconify iconify--twemoji"
         preserveAspectRatio="xMidYMid meet"
         {...props}
     >
@@ -388,7 +388,7 @@ export const DutchIcon = (props) => (
         viewBox="0 0 36 36"
         aria-hidden="true"
         role="img"
-        class="iconify iconify--twemoji"
+        className="iconify iconify--twemoji"
         preserveAspectRatio="xMidYMid meet"
         {...props}
     >
@@ -407,7 +407,7 @@ export const PolishIcon = (props) => (
         viewBox="0 0 36 36"
         aria-hidden="true"
         role="img"
-        class="iconify iconify--twemoji"
+        className="iconify iconify--twemoji"
         preserveAspectRatio="xMidYMid meet"
         {...props}
     >
@@ -425,7 +425,7 @@ export const RussianIcon = (props) => (
         viewBox="0 0 36 36"
         aria-hidden="true"
         role="img"
-        class="iconify iconify--twemoji"
+        className="iconify iconify--twemoji"
         preserveAspectRatio="xMidYMid meet"
         {...props}
     >
@@ -443,7 +443,7 @@ export const ChineseIcon = (props) => (
         viewBox="0 0 36 36"
         aria-hidden="true"
         role="img"
-        class="iconify iconify--twemoji"
+        className="iconify iconify--twemoji"
         preserveAspectRatio="xMidYMid meet"
         {...props}
     >

@@ -1,7 +1,8 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 // Utils
-import { toolsList, languagesList, profilesList } from "../utils/config";
+import { toolsList, languagesList, profilesList } from "../utils/config.js";
+import useApplyStyles from "../hooks/useApplyStyles.js";
 
 const AccessibilityContext = createContext();
 
@@ -48,11 +49,18 @@ export const AccessibilityProvider = ({ children, userTools }) => {
             return;
         }
 
-        const {key: profileKey, tools: profileTools} = profilesList.find((profile) => profile.key === key);
-        const newTools = filteredTools.map((tool) => ({ ...tool, currentValue: profileTools[tool.id] || tool.defaultValue }));
+        const { key: profileKey, tools: profileTools } = profilesList.find(
+            (profile) => profile.key === key
+        );
+        const newTools = filteredTools.map((tool) => ({
+            ...tool,
+            currentValue: profileTools[tool.id] || tool.defaultValue,
+        }));
         setTools(newTools);
         setProfile(key);
     };
+
+    useApplyStyles(language, tools);
 
     return (
         <AccessibilityContext.Provider
