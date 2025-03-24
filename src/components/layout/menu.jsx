@@ -8,8 +8,6 @@ import {
     CloseIcon,
     ReloadIcon,
     ScreenReaderIcon,
-    UsaFlagIcon,
-    ColombiaFlagIcon,
 } from "../icons.jsx";
 import * as Icons from "../icons.jsx";
 
@@ -46,11 +44,14 @@ export default function Menu({ isOpen, setIsOpen }) {
             <main className="bg-base grow w-full rounded-t-xl p-5">
                 <div className="w-full h-full flex flex-col gap-5">
                     <section className="w-full flex items-center font-medium gap-2">
-                        {values.language === "es" ? (
-                            <ColombiaFlagIcon width={25} height={25} />
-                        ) : (
-                            <UsaFlagIcon width={25} height={25} />
-                        )}
+                        {(() => {
+                            const Icon =
+                                Icons[
+                                    lists.languages.find((lang) => lang.key === values.language)
+                                        ?.icon
+                                ] || Icons.SpanishIcon;
+                            return <Icon width={25} height={25} />;
+                        })()}
 
                         <select
                             className="w-full focus:outline-none"

@@ -110,13 +110,63 @@ const toolsList = [
 const languagesList = [
     {
         key: "es",
+        icon: "SpanishIcon",
         label: "Español",
         dictionary: dictionary.es,
     },
     {
         key: "en",
+        icon: "EnglishIcon",
         label: "English",
         dictionary: dictionary.en,
+    },
+    {
+        key: "fr",
+        icon: "FrenchIcon",
+        label: "Français",
+        dictionary: dictionary.fr,
+    },
+    {
+        key: "de",
+        icon: "GermanIcon",
+        label: "Deutsch",
+        dictionary: dictionary.de,
+    },
+    {
+        key: "it",
+        icon: "ItalianIcon",
+        label: "Italiano",
+        dictionary: dictionary.it,
+    },
+    {
+        key: "pt",
+        icon: "PortugueseIcon",
+        label: "Português",
+        dictionary: dictionary.pt,
+    },
+    {
+        key: "nl",
+        icon: "DutchIcon",
+        label: "Nederlands",
+        dictionary: dictionary.nl,
+    },
+    {
+        key: "pl",
+        icon: "PolishIcon",
+        label: "Polski",
+        dictionary: dictionary.pl,
+    },
+    {
+        key: "ru",
+        icon: "RussianIcon",
+        label: "Русский",
+        dictionary: dictionary.ru,
+    },
+    {
+        key: "zh",
+        icon: "ChineseIcon",
+        label: "中文",
+        dictionary: dictionary.zh,
     },
 ];
 
