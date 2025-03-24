@@ -1,3 +1,3 @@
-import { AccessibilityWidget } from "./components/AccessibilityWidget.jsx";
+import AccessibilityWidget from "./components/accessibilityWidget";
 
 export { AccessibilityWidget };
