@@ -1,7 +1,10 @@
 import React from "react";
 import { BlindIcon, CloseIcon, ReloadIcon, ScreenReaderIcon } from "./icons";
+import { useAccessibilityContext } from "../contexts/accessibilityContext";
 
 export default function Menu({ isOpen, setIsOpen }) {
+    const context = useAccessibilityContext();
+
     return (
         <div
             className="fixed top-0 bottom-0 left-0 w-full max-w-[500px] bg-primary duration-300 flex flex-col"

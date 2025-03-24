@@ -9,11 +9,15 @@ import Menu from "./menu.jsx";
 
 import "../styles.css";
 
-export default function AccessibilityWidget({ language = "es", tools, theme, ...props }) {
+export default function AccessibilityWidget({ tools = [], styles = {}, ...props }) {
     const [isOpen, setIsOpen] = useState(false);
 
+    for (const [key, value] of Object.entries(styles)) {
+        document.documentElement.style.setProperty(`--color-${key}`, value);
+    }
+
     return (
-        <AccessibilityProvider language={language} tools={tools} theme={theme}>
+        <AccessibilityProvider userTools={tools}>
             <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
             <Button onClick={() => setIsOpen(!isOpen)} />
         </AccessibilityProvider>

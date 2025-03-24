@@ -1,6 +1,6 @@
 import dictionary from "./dictionary.js";
 
-const tools = [
+const toolsList = [
     {
         id: "screen-reader",
         icon: "ScreenReaderIcon",
@@ -107,7 +107,7 @@ const tools = [
     },
 ];
 
-const languages = [
+const languagesList = [
     {
         key: "es",
         label: "Español",
@@ -120,7 +120,7 @@ const languages = [
     },
 ];
 
-const profiles = [
+const profilesList = [
     {
         key: "blind",
         label: "profiles.blind",
@@ -147,4 +147,4 @@ const profiles = [
     },
 ];
 
-export { tools, languages, profiles };
+export { toolsList, languagesList, profilesList };
