@@ -27,7 +27,7 @@ const toolsList = [
     },
     {
         id: "text-font",
-        icon: "fontStyleIcon",
+        icon: "FontFamilyIcon",
         text: "tools.fontFamily",
         options: ["current", "font-sans", "font-serif", "font-mono"],
         defaultValue: "current",
@@ -35,7 +35,7 @@ const toolsList = [
     },
     {
         id: "text-line-height",
-        icon: "lineHeightIcon",
+        icon: "LineHeightIcon",
         text: "tools.lineHeight",
         options: ["normal", "loose", "extraloose"],
         defaultValue: "normal",
@@ -43,7 +43,7 @@ const toolsList = [
     },
     {
         id: "text-spacing",
-        icon: "letterSpacingIcon",
+        icon: "LetterSpacingIcon",
         text: "tools.letterSpacing",
         options: ["normal", "loose", "extraloose"],
         defaultValue: "normal",
@@ -51,7 +51,7 @@ const toolsList = [
     },
     {
         id: "text-alignment",
-        icon: "textAlignIcon",
+        icon: "TextAlignIcon",
         text: "tools.textAlign",
         options: ["auto", "left", "center", "right", "justify"],
         defaultValue: "auto",
@@ -67,7 +67,7 @@ const toolsList = [
     },
     {
         id: "color-saturation",
-        icon: "colorSaturationIcon",
+        icon: "ColorSaturationIcon",
         text: "tools.colorSaturation",
         options: ["low", "normal", "high", "ultra"],
         defaultValue: "normal",
@@ -83,7 +83,7 @@ const toolsList = [
     },
     {
         id: "highlighted-links",
-        icon: "highlightLinksIcon",
+        icon: "HighlightLinksIcon",
         text: "tools.highlightedLinks",
         options: [false, true],
         defaultValue: false,
@@ -91,7 +91,7 @@ const toolsList = [
     },
     {
         id: "widget-size",
-        icon: "widgetSizeIcon",
+        icon: "WidgetSizeIcon",
         text: "tools.widgetSize",
         options: ["small", "medium", "large"],
         defaultValue: "medium",
@@ -99,7 +99,7 @@ const toolsList = [
     },
     {
         id: "widget-position",
-        icon: "widgetPositionIcon",
+        icon: "WidgetPositionIcon",
         text: "tools.widgetPosition",
         options: ["left", "right"],
         defaultValue: "left",
@@ -123,6 +123,7 @@ const languagesList = [
 const profilesList = [
     {
         key: "blind",
+        icon: "BlindIcon",
         label: "profiles.blind",
         tools: {
             hideImages: true,
@@ -133,6 +134,7 @@ const profilesList = [
     },
     {
         key: "dyslexia",
+        icon: "DyslexiaIcon",
         label: "profiles.dyslexia",
         tools: {
             screenReader: true,

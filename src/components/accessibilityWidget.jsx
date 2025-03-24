@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { AccessibilityProvider } from "../contexts/accessibilityContext.jsx";
 
 // Components
-import Button from "./button.jsx";
-import Menu from "./menu.jsx";
+import Button from "./layout/button.jsx";
+import Menu from "./layout/menu.jsx";
 
 import "../styles.css";
 

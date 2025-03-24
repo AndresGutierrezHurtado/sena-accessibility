@@ -1,7 +1,7 @@
 import React from "react";
 
 // Components
-import { AccessibilityIcon } from "./icons.jsx";
+import { AccessibilityIcon } from "../icons.jsx";
 
 export default function Button({ className = "", ...props }) {
     return (
