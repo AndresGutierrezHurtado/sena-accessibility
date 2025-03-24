@@ -17,7 +17,7 @@ export default function Menu({ isOpen, setIsOpen }) {
     return (
         <div
             className="fixed top-0 bottom-0 left-0 w-full max-w-[500px] bg-primary duration-300 flex flex-col"
-            style={{ transform: `translateX(${isOpen ? "0" : "-100%"})` }}
+            style={{ transform: `translateX(${true ? "0" : "-100%"})` }}
         >
             <header className="w-full flex justify-between items-center p-5 text-primary-content">
                 <h2 className="text-2xl font-bold tracking-[0.3px]">{t("title")}</h2>
@@ -90,6 +90,7 @@ export default function Menu({ isOpen, setIsOpen }) {
                                 return (
                                     <div
                                         key={tool.id}
+                                        onClick={() => update.updateValue(tool.id)}
                                         className="bg-white p-5 rounded-lg flex flex-col items-center justify-center gap-2 font-medium leading-[1rem] text-center cursor-pointer"
                                     >
                                         <Icon size={40} />

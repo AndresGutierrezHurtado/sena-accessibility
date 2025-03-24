@@ -64,11 +64,11 @@ export {
 export const SpanishIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         version="1.1"
         id="Layer_1"
         viewBox="0 0 512 512"
-        xml:space="preserve"
+        xmlSpace="preserve"
         {...props}
     >
         <path
@@ -86,11 +86,11 @@ export const SpanishIcon = (props) => (
 export const EnglishIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         version="1.1"
         id="Layer_1"
         viewBox="0 0 512 512"
-        xml:space="preserve"
+        xmlSpace="preserve"
         {...props}
     >
         <path
@@ -291,7 +291,7 @@ export const EnglishIcon = (props) => (
 export const FrenchIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         width="800px"
         height="800px"
         viewBox="0 0 36 36"
@@ -310,7 +310,7 @@ export const FrenchIcon = (props) => (
 export const GermanIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         width="800px"
         height="800px"
         viewBox="0 0 36 36"
@@ -329,7 +329,7 @@ export const GermanIcon = (props) => (
 export const ItalianIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         width="800px"
         height="800px"
         viewBox="0 0 36 36"
@@ -348,7 +348,7 @@ export const ItalianIcon = (props) => (
 export const PortugueseIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         width="800px"
         height="800px"
         viewBox="0 0 36 36"
@@ -377,7 +377,7 @@ export const PortugueseIcon = (props) => (
 export const DutchIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         width="800px"
         height="800px"
         viewBox="0 0 36 36"
@@ -396,7 +396,7 @@ export const DutchIcon = (props) => (
 export const PolishIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         width="800px"
         height="800px"
         viewBox="0 0 36 36"
@@ -414,7 +414,7 @@ export const PolishIcon = (props) => (
 export const RussianIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         width="800px"
         height="800px"
         viewBox="0 0 36 36"
@@ -432,7 +432,7 @@ export const RussianIcon = (props) => (
 export const ChineseIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         width="800px"
         height="800px"
         viewBox="0 0 36 36"

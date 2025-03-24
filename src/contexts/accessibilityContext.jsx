@@ -23,13 +23,30 @@ export const AccessibilityProvider = ({ children, userTools }) => {
         if (path.length === 3) return dictionary[path[0]][path[1]][path[2]];
     };
 
+    const updateValue = (key) => {
+        setProfile(null);
+
+        const newTools = tools.map((tool) => {
+            if (tool.id === key) {
+                const currentValue = tool.currentValue;
+                const index = tool.options.indexOf(currentValue);
+                const nextIndex = index === tool.options.length - 1 ? 0 : index + 1;
+                tool.currentValue = tool.options[nextIndex];
+            }
+
+            return tool;
+        });
+
+        setTools(newTools);
+    };
+
     return (
         <AccessibilityContext.Provider
             value={{
                 tools,
                 lists: { languages: languagesList, profiles: profilesList },
                 values: { language, profile },
-                update: { setLanguage, setProfile, setTools },
+                update: { setLanguage, setProfile, updateValue },
                 translate,
             }}
         >
