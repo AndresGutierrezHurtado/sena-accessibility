@@ -4,9 +4,13 @@ import { ImFontSize as FontSizeIcon } from "react-icons/im";
 import { SiAdobefonts as FontFamilyIcon } from "react-icons/si";
 import { MdFormatAlignLeft as TextAlignIcon } from "react-icons/md";
 import { TbArrowsLeftRight as WidgetPositionIcon } from "react-icons/tb";
-import { FaBlind as BlindIcon, FaLink as HighlightLinksIcon } from "react-icons/fa";
 import { IoMdClose as CloseIcon, IoIosContrast as ContrastIcon } from "react-icons/io";
 import { PiCursorBold as CursorIcon, PiImageBroken as HideImagesIcon } from "react-icons/pi";
+import {
+    FaBlind as BlindIcon,
+    FaLink as HighlightLinksIcon,
+    FaCheck as CheckIcon,
+} from "react-icons/fa";
 import {
     IoReload as ReloadIcon,
     IoReaderOutline as DyslexiaIcon,
@@ -55,6 +59,7 @@ export {
     HighlightLinksIcon,
     WidgetSizeIcon,
     WidgetPositionIcon,
+    CheckIcon,
 
     // Profile
     BlindIcon,

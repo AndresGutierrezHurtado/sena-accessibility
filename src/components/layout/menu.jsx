@@ -4,12 +4,10 @@ import React from "react";
 import { useAccessibilityContext } from "../../contexts/accessibilityContext.jsx";
 
 // Icons
-import {
-    CloseIcon,
-    ReloadIcon,
-    ScreenReaderIcon,
-} from "../icons.jsx";
+import { CloseIcon, ReloadIcon, ScreenReaderIcon } from "../icons.jsx";
 import * as Icons from "../icons.jsx";
+import Tool from "./tool.jsx";
+import Profile from "./profile.jsx";
 
 export default function Menu({ isOpen, setIsOpen }) {
     const { tools, lists, values, update, translate: t } = useAccessibilityContext();
@@ -67,37 +65,16 @@ export default function Menu({ isOpen, setIsOpen }) {
                     </section>
                     <hr />
                     <section className="w-full flex flex-row gap-5">
-                        {lists.profiles.map((profile) => {
-                            const Icon = Icons[profile.icon];
-                            return (
-                                <div
-                                    key={profile.key}
-                                    className="flex items-center gap-2 bg-white rounded-lg p-3 font-medium w-full"
-                                >
-                                    <div className="bg-divider/50 rounded-full p-2 flex items-center justify-center">
-                                        <Icon size={17} />
-                                    </div>
-                                    <div>{t(profile.label)}</div>
-                                </div>
-                            );
-                        })}
+                        {lists.profiles.map((profile) => (
+                            <Profile key={profile.key} currentProfile={values.profile} update={update.updateProfileValue} profile={profile} t={t} />
+                        ))}
                     </section>
                     <hr />
                     <section className="grow overflow-y-auto">
                         <div className="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-5 h-full max-h-[calc(100vh-90vh)]">
-                            {tools.map((tool) => {
-                                const Icon = Icons[tool.icon] || ScreenReaderIcon;
-                                return (
-                                    <div
-                                        key={tool.id}
-                                        onClick={() => update.updateValue(tool.id)}
-                                        className="bg-white p-5 rounded-lg flex flex-col items-center justify-center gap-2 font-medium leading-[1rem] text-center cursor-pointer"
-                                    >
-                                        <Icon size={40} />
-                                        <p>{t(tool.text)}</p>
-                                    </div>
-                                );
-                            })}
+                            {tools.map((tool) => (
+                                <Tool key={tool.id} tool={tool} update={update.updateValue} t={t} />
+                            ))}
                         </div>
                     </section>
                     <hr />
@@ -109,7 +86,10 @@ export default function Menu({ isOpen, setIsOpen }) {
                             <CloseIcon size={20} />
                             {t("close")}
                         </button>
-                        <button className="w-full bg-transparent text-primary border border-primary rounded py-1 font-medium flex justify-center items-center gap-2 cursor-pointer active:scale-95 ease-out duration-300">
+                        <button
+                            onClick={() => update.updateProfileValue("default")}
+                            className="w-full bg-transparent text-primary border border-primary rounded py-1 font-medium flex justify-center items-center gap-2 cursor-pointer active:scale-95 ease-out duration-300"
+                        >
                             <ReloadIcon size={20} className="-rotate-x-180 rotate-180" />
                             {t("reload")}
                         </button>

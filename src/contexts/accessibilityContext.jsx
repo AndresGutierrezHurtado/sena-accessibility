@@ -40,13 +40,27 @@ export const AccessibilityProvider = ({ children, userTools }) => {
         setTools(newTools);
     };
 
+    const updateProfileValue = (key) => {
+        if (key == "default") {
+            setProfile(null);
+            const newTools = tools.map((tool) => ({ ...tool, currentValue: tool.defaultValue }));
+            setTools(newTools);
+            return;
+        }
+
+        const {key: profileKey, tools: profileTools} = profilesList.find((profile) => profile.key === key);
+        const newTools = filteredTools.map((tool) => ({ ...tool, currentValue: profileTools[tool.id] || tool.defaultValue }));
+        setTools(newTools);
+        setProfile(key);
+    };
+
     return (
         <AccessibilityContext.Provider
             value={{
                 tools,
                 lists: { languages: languagesList, profiles: profilesList },
                 values: { language, profile },
-                update: { setLanguage, setProfile, updateValue },
+                update: { setLanguage, updateProfileValue, updateValue },
                 translate,
             }}
         >
