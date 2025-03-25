@@ -3,9 +3,13 @@ import { GiResize as WidgetSizeIcon } from "react-icons/gi";
 import { ImFontSize as FontSizeIcon } from "react-icons/im";
 import { SiAdobefonts as FontFamilyIcon } from "react-icons/si";
 import { MdFormatAlignLeft as TextAlignIcon } from "react-icons/md";
-import { TbArrowsLeftRight as WidgetPositionIcon } from "react-icons/tb";
+import {
+    TbDeviceIpadHorizontalDown as ADHDIcon,
+    TbArrowsLeftRight as WidgetPositionIcon,
+} from "react-icons/tb";
 import { IoMdClose as CloseIcon, IoIosContrast as ContrastIcon } from "react-icons/io";
 import { PiCursorBold as CursorIcon, PiImageBroken as HideImagesIcon } from "react-icons/pi";
+import { FaBullseye as EpilepsyIcon } from "react-icons/fa6";
 import {
     FaBlind as BlindIcon,
     FaLink as HighlightLinksIcon,
@@ -60,6 +64,8 @@ export {
     WidgetSizeIcon,
     WidgetPositionIcon,
     CheckIcon,
+    EpilepsyIcon,
+    ADHDIcon,
 
     // Profile
     BlindIcon,

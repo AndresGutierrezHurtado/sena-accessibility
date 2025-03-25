@@ -68,7 +68,7 @@ export default function Menu({ isOpen, setIsOpen }) {
                         </select>
                     </section>
                     <hr />
-                    <section className="w-full flex flex-row gap-5">
+                    <section className="w-full grid grid-cols-2 gap-5">
                         {lists.profiles.map((profile) => (
                             <Profile
                                 key={profile.key}

@@ -10,7 +10,7 @@ export default function Profile({ profile, currentProfile, update, t }) {
         <div
             key={profile.key}
             onClick={() => update(profile.key)}
-            className="flex items-center gap-2 bg-white rounded-lg p-3 font-medium w-full"
+            className="flex items-center gap-2 bg-white rounded-lg p-3 font-medium w-full cursor-pointer"
             style={{
                 backgroundColor: isActive ? "var(--color-widget-secondary)" : "var(--color-white)",
                 color: isActive ? "var(--color-widget-secondary-content)" : "var(--color-widget-base-content)",

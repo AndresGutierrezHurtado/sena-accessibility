@@ -10,7 +10,6 @@ export const ReadGuideCursor = () => {
         const { clientX, clientY } = event;
         if (navigator.maxTouchPoints > 0) return;
         setCursorPosition({ x: clientX, y: clientY });
-        console.log(cursorPosition);
     };
 
     document.addEventListener("mousemove", handleMouseMove);

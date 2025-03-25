@@ -4,9 +4,10 @@ export default {
         reload: "Recargar",
         close: "Cerrar",
         profiles: {
-            lowVision: "Visión baja",
             blind: "Ceguera",
-            dyslexia: "Dyslexia",
+            dyslexia: "Dislexia",
+            adhd: "TDAH",
+            epilepsy: "Epilepsia",
         },
         tools: {
             screenReader: "Lector de pantalla",
@@ -29,9 +30,10 @@ export default {
         reload: "Reload",
         close: "Close",
         profiles: {
-            lowVision: "Low vision",
             blind: "Blind",
             dyslexia: "Dyslexia",
+            adhd: "ADHD",
+            epilepsy: "Epilepsy",
         },
         tools: {
             screenReader: "Screen Reader",
@@ -54,9 +56,10 @@ export default {
         reload: "Recharger",
         close: "Fermer",
         profiles: {
-            lowVision: "Vision faible",
             blind: "Cécité",
             dyslexia: "Dyslexie",
+            adhd: "TDAH",
+            epilepsy: "Epilepsie",
         },
         tools: {
             screenReader: "Lecteur d'écran",
@@ -79,9 +82,10 @@ export default {
         reload: "Neu laden",
         close: "Schließen",
         profiles: {
-            lowVision: "Geringe Sehschärfe",
             blind: "Blindheit",
             dyslexia: "Dyslexie",
+            adhd: "ADHD",
+            epilepsy: "Epilepsie",
         },
         tools: {
             screenReader: "Bildschirmleser",
@@ -89,14 +93,14 @@ export default {
             fontSize: "Schriftgröße",
             fontFamily: "Schriftart",
             lineHeight: "Zeilenhöhe",
-            letterSpacing: "Zeilenabstand",
+            letterSpacing: "Buchstabenabstand",
             textAlign: "Textausrichtung",
             contrast: "Kontrast",
             colorSaturation: "Farbsättigung",
             hideImages: "Bilder ausblenden",
             highlightedLinks: "Hervorgehobene Links",
-            widgetSize: "Widgetsgröße",
-            widgetPosition: "Widgetsposition",
+            widgetSize: "Widget-Größe",
+            widgetPosition: "Widget-Position",
         },
     },
     it: {
@@ -104,9 +108,10 @@ export default {
         reload: "Ricarica",
         close: "Chiudi",
         profiles: {
-            lowVision: "Vista bassa",
             blind: "Cecità",
             dyslexia: "Dislessia",
+            adhd: "ADHD",
+            epilepsy: "Epilessia",
         },
         tools: {
             screenReader: "Lettore di schermo",
@@ -129,9 +134,10 @@ export default {
         reload: "Recarregar",
         close: "Fechar",
         profiles: {
-            lowVision: "Baixa visão",
             blind: "Cegueira",
             dyslexia: "Dislexia",
+            adhd: "ADHD",
+            epilepsy: "Epilepsia",
         },
         tools: {
             screenReader: "Leitor de tela",
@@ -154,9 +160,10 @@ export default {
         reload: "Herladen",
         close: "Sluiten",
         profiles: {
-            lowVision: "Lage visie",
             blind: "Blindheid",
             dyslexia: "Dyslexie",
+            adhd: "ADHD",
+            epilepsy: "Epilepsie",
         },
         tools: {
             screenReader: "Schermlezer",
@@ -179,9 +186,10 @@ export default {
         reload: "Przeładuj",
         close: "Zamknij",
         profiles: {
-            lowVision: "Niska wizja",
-            blind: "Ślepota",
+            blind: "Niewidomy",
             dyslexia: "Dysleksja",
+            adhd: "ADHD",
+            epilepsy: "Epilepsja",
         },
         tools: {
             screenReader: "Czytnik ekranu",
@@ -193,7 +201,7 @@ export default {
             textAlign: "Wyrównanie tekstu",
             contrast: "Kontrast",
             colorSaturation: "Nasycenie koloru",
-            hideImages: "Ukryj obrazy",
+            hideImages: "Ukryj zdjęcia",
             highlightedLinks: "Podświetlone linki",
             widgetSize: "Rozmiar widgeta",
             widgetPosition: "Pozycja widgeta",
@@ -204,9 +212,10 @@ export default {
         reload: "Перезагрузить",
         close: "Закрыть",
         profiles: {
-            lowVision: "Слабовидение",
             blind: "Слепота",
             dyslexia: "Дислексия",
+            adhd: "СДВГ",
+            epilepsy: "Эпилепсия",
         },
         tools: {
             screenReader: "Скринридер",
@@ -214,7 +223,7 @@ export default {
             fontSize: "Размер шрифта",
             fontFamily: "Семейство шрифта",
             lineHeight: "Высота строки",
-            letterSpacing: "Межзнаковой интервал",
+            letterSpacing: "Межбуквенный интервал",
             textAlign: "Выравнивание текста",
             contrast: "Контраст",
             colorSaturation: "Насыщенность цвета",
@@ -229,9 +238,10 @@ export default {
         reload: "重新加载",
         close: "关闭",
         profiles: {
-            lowVision: "视力低下",
             blind: "失明",
-            dyslexia: "阅读困难",
+            dyslexia: "阅读障碍",
+            adhd: "ADHD",
+            epilepsy: "癫痫",
         },
         tools: {
             screenReader: "屏幕阅读器",
@@ -250,4 +260,3 @@ export default {
         },
     },
 };
-
