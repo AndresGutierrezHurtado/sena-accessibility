@@ -104,21 +104,30 @@ const useChangeFontSize = (tools) => {
 const useChangeFontFamily = (tools) => {
     const fontFamily = tools.find((tool) => tool.id === "text-font").currentValue;
 
+    const texts = document.querySelectorAll(
+        "p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, label, select, input, button, footer, header, code, pre, div"
+    );
+
     switch (fontFamily) {
         case "font-sans":
-            document.body.classList.remove("font-sans", "font-mono");
-            document.body.classList.add("font-sans");
+            texts.forEach((text) => {
+                text.style.fontFamily = "sans-serif";
+            });
             break;
         case "font-serif":
-            document.body.classList.remove("font-sans", "font-mono");
-            document.body.classList.add("font-serif");
+            texts.forEach((text) => {
+                text.style.fontFamily = "serif";
+            });
             break;
         case "font-mono":
-            document.body.classList.remove("font-sans", "font-serif");
-            document.body.classList.add("font-mono");
+            texts.forEach((text) => {
+                text.style.fontFamily = "monospace";
+            });
             break;
         default:
-            document.body.classList.remove("font-sans", "font-serif", "font-mono");
+            texts.forEach((text) => {
+                text.style.removeProperty("font-family");
+            });
             break;
     }
 };
@@ -226,30 +235,39 @@ const useChangeLetterSpacing = (tools) => {
 const useChangeTextAlign = (tools) => {
     const textAlign = tools.find((tool) => tool.id === "text-align").currentValue;
 
+    const texts = document.querySelectorAll(
+        "p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, label, select, input, button, footer, header, code, pre, div"
+    );
+
     switch (textAlign) {
         case "left":
-            document.body.classList.remove("text-center", "text-right", "text-justify");
-            document.body.classList.add("text-left");
+            texts.forEach((text) => {
+                text.style.textAlign = "left";
+            });
             break;
+
         case "center":
-            document.body.classList.remove("text-left", "text-right", "text-justify");
-            document.body.classList.add("text-center");
+            texts.forEach((text) => {
+                text.style.textAlign = "center";
+            });
             break;
+
         case "right":
-            document.body.classList.remove("text-left", "text-center", "text-justify");
-            document.body.classList.add("text-right");
+            texts.forEach((text) => {
+                text.style.textAlign = "right";
+            });
             break;
+
         case "justify":
-            document.body.classList.remove("text-left", "text-center", "text-right");
-            document.body.classList.add("text-justify");
+            texts.forEach((text) => {
+                text.style.textAlign = "justify";
+            });
             break;
+
         default:
-            document.body.classList.remove(
-                "text-left",
-                "text-center",
-                "text-right",
-                "text-justify"
-            );
+            texts.forEach((text) => {
+                text.style.removeProperty("text-align");
+            });
             break;
     }
 };
@@ -321,12 +339,16 @@ const useHightlightLinks = (tools) => {
     const highlightLinks = tools.find((tool) => tool.id === "highlight-links").currentValue;
 
     if (highlightLinks) {
-        document.body.querySelectorAll("a").forEach((link) => {
-            link.style.boxShadow = "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)";
+        document.body.querySelectorAll("a[href]").forEach((link) => {
+            link.style.fontWeight = 700;
+            link.style.backgroundColor = "var(--color-widget-secondary)";
+            link.style.color = "var(--color-widget-secondary-content)";
         });
     } else {
-        document.body.querySelectorAll("a").forEach((link) => {
-            link.style.boxShadow = "none";
+        document.body.querySelectorAll("a[href]").forEach((link) => {
+            link.style.removeProperty("font-weight");
+            link.style.removeProperty("color");
+            link.style.removeProperty("background-color");
         });
     }
 };
