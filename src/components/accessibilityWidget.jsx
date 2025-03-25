@@ -7,7 +7,6 @@ import { AccessibilityProvider } from "../contexts/accessibilityContext.jsx";
 import Button from "./layout/button.jsx";
 import Menu from "./layout/menu.jsx";
 
-import "../styles.css";
 import { MaskCursor } from "./MaskCursor.jsx";
 import { ReadGuideCursor } from "./ReadGuideCursor.jsx";
 

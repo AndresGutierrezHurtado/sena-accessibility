@@ -1,5 +1,6 @@
 import React from "react";
 import AccessibilityWidget from "../components/accessibilityWidget.jsx";
+import "../styles.css";
 
 export default {
     title: "components/AccessibilityWidget",

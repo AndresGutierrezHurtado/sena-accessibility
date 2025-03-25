@@ -4,6 +4,8 @@
     "description": "This is a React/Next.js/TailwindCSS based component library for web accessibility.",
     "author": "Andrés Gutiérrez Hurtado",
     "license": "MIT",
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.esm.js",
     "homepage": "https://github.com/AndresGutierrezHurtado/sena-accessibility#readme",
     "repository": {
         "type": "git",
@@ -22,6 +24,7 @@
         "widget"
     ],
     "scripts": {
+        "build": "rollup -c",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build"
     },
@@ -30,8 +33,13 @@
         "react-dom": "^18.0.0"
     },
     "dependencies": {
+        "@babel/preset-react": "^7.26.3",
+        "@rollup/plugin-commonjs": "^28.0.3",
+        "@rollup/plugin-node-resolve": "^16.0.1",
+        "@rollup/plugin-terser": "^0.4.4",
         "@tailwindcss/vite": "^4.0.15",
         "react-icons": "^5.5.0",
+        "rollup-plugin-babel": "^4.4.0",
         "tailwindcss": "^4.0.15"
     },
     "devDependencies": {
@@ -44,6 +52,8 @@
         "@storybook/react-vite": "^8.6.8",
         "@storybook/test": "^8.6.8",
         "prop-types": "^15.8.1",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "rollup-plugin-postcss": "^4.0.2",
         "storybook": "^8.6.8"
     }
 }

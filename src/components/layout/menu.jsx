@@ -4,7 +4,7 @@ import React from "react";
 import { useAccessibilityContext } from "../../contexts/accessibilityContext.jsx";
 
 // Icons
-import { CloseIcon, ReloadIcon, ScreenReaderIcon } from "../icons.jsx";
+import { CloseIcon, ReloadIcon } from "../icons.jsx";
 import * as Icons from "../icons.jsx";
 import Tool from "./tool.jsx";
 import Profile from "./profile.jsx";
@@ -16,7 +16,7 @@ export default function Menu({ isOpen, setIsOpen }) {
         <div
             className="fixed top-0 bottom-0 w-full max-w-[var(--widget-size,500px)] bg-primary duration-300 flex flex-col"
             style={{
-                transform: `translateX(${true ? "0" : "var(--widget-position)"})`,
+                transform: `translateX(${isOpen ? "0" : "var(--widget-position)"})`,
                 left: "var(--widget-left)",
                 right: "var(--widget-right)",
             }}

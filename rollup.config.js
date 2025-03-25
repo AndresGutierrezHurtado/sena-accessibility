@@ -27,9 +27,13 @@ const config = {
             exclude: "node_modules/**",
             presets: ["@babel/preset-react"],
         }),
-        postcss(),
+        postcss({
+            extract: 'index.css',
+            minimize: true,
+        }),
         terser(),
     ],
+    external: ["react", "react-dom"],
 };
 
 module.exports = config;
