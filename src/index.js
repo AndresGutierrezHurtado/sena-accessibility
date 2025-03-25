@@ -1,4 +1,4 @@
 import AccessibilityWidget from "./components/accessibilityWidget.jsx";
-import "./styles.css";
+import "./output.css";
 
 export { AccessibilityWidget };
