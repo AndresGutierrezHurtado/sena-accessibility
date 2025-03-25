@@ -1,0 +1,21 @@
+import React, { useState } from "react";
+
+export const ReadGuideCursor = () => {
+    const [cursorPosition, setCursorPosition] = useState({
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2,
+    });
+
+    const handleMouseMove = (event) => {
+        const { clientX, clientY } = event;
+        if (navigator.maxTouchPoints > 0) return;
+        setCursorPosition({ x: clientX, y: clientY });
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    return (
+        <div className="read-guide fixed left-0 right-0 h-[20px] bg-secondary border-t-2 border-b-2 border-primary z-[999] hidden relative pointer-events-none" style={{ top: cursorPosition.y - 21 }}>
+            <div className="read-guide__cursor w-[20px] h-[20px] bg-secondary border-primary border-t-2 border-l-2 border-primary rotate-45 absolute -translate-x-[28px] -translate-y-[11px] z-[10004]" style={{ left: cursorPosition.x }}></div>
+        </div>
+    );
+};

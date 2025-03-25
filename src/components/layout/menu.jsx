@@ -16,7 +16,7 @@ export default function Menu({ isOpen, setIsOpen }) {
         <div
             className="fixed top-0 bottom-0 w-full max-w-[var(--widget-size,500px)] bg-primary duration-300 flex flex-col"
             style={{
-                transform: `translateX(${isOpen ? "0" : "var(--widget-position)"})`,
+                transform: `translateX(${true ? "0" : "var(--widget-position)"})`,
                 left: "var(--widget-left)",
                 right: "var(--widget-right)",
             }}
