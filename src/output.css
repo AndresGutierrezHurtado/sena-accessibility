@@ -227,6 +227,9 @@
   .z-\[999\] {
     z-index: 999;
   }
+  .z-\[9999\] {
+    z-index: 9999;
+  }
   .z-\[10004\] {
     z-index: 10004;
   }
@@ -284,8 +287,8 @@
   .grow {
     flex-grow: 1;
   }
-  .-translate-x-\[28px\] {
-    --tw-translate-x: calc(28px * -1);
+  .-translate-x-\[10px\] {
+    --tw-translate-x: calc(10px * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-y-\[11px\] {
@@ -432,15 +435,6 @@
   .text-center {
     text-align: center;
   }
-  .text-justify {
-    text-align: justify;
-  }
-  .text-left {
-    text-align: left;
-  }
-  .text-right {
-    text-align: right;
-  }
   .font-mono {
     font-family: var(--font-mono);
   }
@@ -508,6 +502,10 @@
 }
 hr {
   border-color: var(--color-widget-divider);
+}
+#button-accessibility svg {
+  fill: var(--color-widget-primary);
+  stroke: var(--color-widget-primary);
 }
 @property --tw-translate-x {
   syntax: "*";

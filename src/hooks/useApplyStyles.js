@@ -508,7 +508,7 @@ export const useScreenReader = (tools, language) => {
 
         const removeMouseOverListeners = () => {
             const textElements = document.querySelectorAll(
-                "p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, label, select, input, button, footer, header"
+                "p, span, a, li, td, th, h1, h2, h3, h4, h5, h6, label, select, input, button, footer, header, div"
             );
             textElements.forEach((element) => {
                 element.removeEventListener("mouseover", handleMouseOver);

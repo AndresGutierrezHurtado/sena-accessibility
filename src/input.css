@@ -12,3 +12,8 @@
 hr {
     border-color: var(--color-widget-divider);
 }
+
+#button-accessibility svg {
+    fill: var(--color-widget-primary);
+    stroke: var(--color-widget-primary);
+}

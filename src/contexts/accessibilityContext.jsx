@@ -10,11 +10,15 @@ export const useAccessibilityContext = () => useContext(AccessibilityContext);
 
 export const AccessibilityProvider = ({ children, userTools }) => {
     const filteredTools =
-        userTools.length > 0 ? toolsList.filter((tool) => tool.id === tool) : toolsList;
+        userTools.length > 0 ? toolsList.filter((tool) => userTools.includes(tool.id)) : toolsList;
 
-    const [tools, setTools] = useState(filteredTools);
-    const [language, setLanguage] = useState(languagesList[0].key);
-    const [profile, setProfile] = useState(null);
+    const storedTools = JSON.parse(localStorage.getItem("accessibility_tools")) || filteredTools;
+    const storedLanguage = localStorage.getItem("accessibility_language") || languagesList[0].key;
+    const storedProfile = localStorage.getItem("accessibility_profile") || null;
+
+    const [tools, setTools] = useState(storedTools);
+    const [language, setLanguage] = useState(storedLanguage);
+    const [profile, setProfile] = useState(storedProfile || null);
 
     const translate = (key) => {
         const path = key.split(".");
@@ -61,6 +65,18 @@ export const AccessibilityProvider = ({ children, userTools }) => {
     };
 
     useApplyStyles(language, tools);
+
+    useEffect(() => {
+        localStorage.setItem("accessibility_tools", JSON.stringify(tools));
+    }, [tools]);
+
+    useEffect(() => {
+        localStorage.setItem("accessibility_language", language);
+    }, [language]);
+
+    useEffect(() => {
+        localStorage.setItem("accessibility_profile", profile || null);
+    }, [profile]);
 
     return (
         <AccessibilityContext.Provider

@@ -21,65 +21,25 @@
 
 ## **Props del Componente**
 
--   `tools`: Es un array de objetos, estas son todas las opciones, si quieres elegir ciertas opciones le pasas el array con las opciones que deseas y su valor por defecto.
+-   `tools`: Es un array de objetos, estas son todas las opciones, si quieres elegir ciertas opciones le pasas el array con las opciones que deseas.
 
     ```jsx
-    // Selecciona las herramientas que contendrá el widget: 
+    // Selecciona las herramientas que contendrá el widget:
     [
-          {
-              id: "screen-reader",
-              defaultValue: false, // Opciones: [false, true]
-          },
-          {
-              id: "cursor",
-              defaultValue: "auto", // Opciones: ["auto", "white", "black", "mask", "readGuide"]
-          },
-          {
-              id: "text-size",
-              defaultValue: "normal", // Opciones: ["small", "normal", "large", "extralarge", "giant"]
-          },
-          {
-              id: "text-font",
-              defaultValue: "current", // Opciones: ["current", "font-sans", "font-serif", "font-mono"]
-          },
-          {
-              id: "text-line-height",
-              defaultValue: "normal", // Opciones: ["normal", "loose", "extraloose"]
-          },
-          {
-              id: "text-spacing",
-              defaultValue: "normal", // Opciones: ["normal", "loose", "extraloose"]
-          },
-          {
-              id: "text-alignment",
-              defaultValue: "auto", // Opciones: ["auto", "left", "center", "right", "justify"]
-          },
-          {
-              id: "contrast",
-              defaultValue: "normal", // Opciones: ["low", "normal", "high", "ultra", "inverted"]
-          },
-          {
-              id: "color-saturation",
-              defaultValue: "normal", // Opciones: ["low", "normal", "high", "ultra"]
-          },
-          {
-              id: "hide-images",
-              defaultValue: false, // Opciones: [false, true]
-          },
-          {
-              id: "highlighted-links",
-              defaultValue: false, // Opciones: [false, true]
-          },
-          {
-              id: "widget-size",
-              defaultValue: "medium", // Opciones: ["small", "medium", "large"]
-          },
-          {
-              id: "widget-position",
-              defaultValue: "left", // Opciones: ["left", "right"]
-          },
-      ],
-
+          "screen-reader",
+          "cursor",
+          "text-size",
+          "text-font",
+          "text-line-height",
+          "text-spacing",
+          "text-alignment",
+          "contrast",
+          "color-saturation",
+          "hide-images",
+          "highlighted-links",
+          "widget-size",
+          "widget-position",
+    ],
     ```
 
 -   `styles`: Es un objeto, en el cual se pueden modificar los colores del componente. si no se pasa nada este sera el elemento por defecto:
@@ -164,17 +124,12 @@ Supongamos que deseas personalizar las colores del widget. Aquí te muestro cóm
 ```jsx
 import React from "react";
 import { AccessibilityWidget } from "sena-accessibility";
-import "sena-accessibility/dist/index.css";
+import "sena-acessibility/dist/index.css";
 
 export default function AppLayout() {
     const customColors = {
-        "widget-base": "#fff",
-        "widget-base-content": "#000",
-        "widget-primary": "#39a900",
-        "widget-primary-content": "#fff",
-        "widget-secondary": "#04324d",
-        "widget-secondary-content": "#fff",
-        "widget-divider": "#A3A3A3",
+        "widget-primary": "#3b0764",
+        "widget-secondary": "#7e22ce",
     };
 
     return (
