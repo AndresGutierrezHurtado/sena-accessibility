@@ -11,7 +11,7 @@ export default function Tool({ tool, update, t }) {
             key={tool.id}
             onClick={() => update(tool.id)}
             className="bg-white p-5 rounded-lg flex flex-col items-center justify-center gap-2 font-medium leading-tight text-center cursor-pointer relative"
-            style={{ border: isActive ? "2px solid var(--color-secondary)" : "", color: isActive ? "var(--color-secondary)" : "var(--color-base-content)" }}
+            style={{ border: isActive ? "2px solid var(--color-widget-secondary)" : "", color: isActive ? "var(--color-widget-secondary)" : "var(--color-widget-base-content)" }}
         >
             <Icon size={40} />
             <p>{t(tool.text)}</p>
@@ -23,8 +23,8 @@ export default function Tool({ tool, update, t }) {
                                 key={option}
                                 className={`w-full h-[3px] rounded-full duration-200 ${
                                     option === tool.currentValue
-                                        ? "bg-secondary"
-                                        : "bg-primary/80"
+                                        ? "bg-widget-secondary"
+                                        : "bg-widget-primary/80"
                                 }`}
                             ></div>
                         ))}

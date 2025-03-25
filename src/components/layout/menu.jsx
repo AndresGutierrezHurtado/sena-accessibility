@@ -14,17 +14,17 @@ export default function Menu({ isOpen, setIsOpen }) {
 
     return (
         <div
-            className="fixed top-0 bottom-0 w-full max-w-[var(--widget-size,500px)] bg-primary duration-300 flex flex-col"
+            className="fixed top-0 bottom-0 w-full max-w-[var(--widget-size,500px)] bg-widget-primary duration-300 flex flex-col"
             style={{
                 transform: `translateX(${isOpen ? "0" : "var(--widget-position)"})`,
                 left: "var(--widget-left)",
                 right: "var(--widget-right)",
             }}
         >
-            <header className="w-full flex justify-between items-center p-5 text-primary-content">
+            <header className="w-full flex justify-between items-center p-5 text-widget-primary-content">
                 <h2 className="text-2xl font-bold tracking-[0.3px]">{t("title")}</h2>
                 <button
-                    className="border border-[1.5px] border-primary-content rounded-full p-1 active:scale-95 ease-out duration-300"
+                    className="border border-[1.5px] border-widget-primary-content rounded-full p-1 active:scale-95 ease-out duration-300"
                     onClick={() => setIsOpen(false)}
                 >
                     <svg
@@ -43,7 +43,7 @@ export default function Menu({ isOpen, setIsOpen }) {
                     </svg>
                 </button>
             </header>
-            <main className="bg-base grow w-full rounded-t-xl p-5">
+            <main className="bg-widget-base grow w-full rounded-t-xl p-5">
                 <div className="w-full h-full flex flex-col gap-5">
                     <section className="w-full flex items-center font-medium gap-2">
                         {(() => {
@@ -91,14 +91,14 @@ export default function Menu({ isOpen, setIsOpen }) {
                     <section className="flex gap-5 items-center">
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="w-full bg-primary text-primary-content border border-primary rounded py-1 font-medium flex justify-center items-center gap-2 cursor-pointer active:scale-95 ease-out duration-300"
+                            className="w-full bg-widget-primary text-widget-primary-content border border-widget-primary rounded py-1 font-medium flex justify-center items-center gap-2 cursor-pointer active:scale-95 ease-out duration-300"
                         >
                             <CloseIcon size={20} />
                             {t("close")}
                         </button>
                         <button
                             onClick={() => update.updateProfileValue("default")}
-                            className="w-full bg-transparent text-primary border border-primary rounded py-1 font-medium flex justify-center items-center gap-2 cursor-pointer active:scale-95 ease-out duration-300"
+                            className="w-full bg-transparent text-widget-primary border border-widget-primary rounded py-1 font-medium flex justify-center items-center gap-2 cursor-pointer active:scale-95 ease-out duration-300"
                         >
                             <ReloadIcon size={20} className="-rotate-x-180 rotate-180" />
                             {t("reload")}
