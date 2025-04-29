@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Contexts
 import { AccessibilityProvider } from "../contexts/accessibilityContext.jsx";
@@ -13,9 +13,11 @@ import { ReadGuideCursor } from "./ReadGuideCursor.jsx";
 export default function AccessibilityWidget({ tools = [], styles = {}, ...props }) {
     const [isOpen, setIsOpen] = useState(false);
 
-    for (const [key, value] of Object.entries(styles)) {
-        document.documentElement.style.setProperty(`--color-${key}`, value);
-    }
+    useEffect(() => {
+        for (const [key, value] of Object.entries(styles)) {
+            document.documentElement.style.setProperty(`--color-${key}`, value);
+        }
+    }, [styles]);
 
     return (
         <AccessibilityProvider userTools={tools}>
