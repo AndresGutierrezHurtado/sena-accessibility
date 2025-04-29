@@ -12,9 +12,20 @@ export const AccessibilityProvider = ({ children, userTools }) => {
     const filteredTools =
         userTools.length > 0 ? toolsList.filter((tool) => userTools.includes(tool.id)) : toolsList;
 
-    const storedTools = JSON.parse(localStorage.getItem("accessibility_tools")) || filteredTools;
-    const storedLanguage = localStorage.getItem("accessibility_language") || languagesList[0].key;
-    const storedProfile = localStorage.getItem("accessibility_profile") || null;
+    const [storedTools, setStoredTools] = useState(filteredTools);
+    const [storedLanguage, setStoredLanguage] = useState(languagesList[0].key);
+    const [storedProfile, setStoredProfile] = useState(null);
+
+    useEffect(() => {
+        const savedTools = JSON.parse(localStorage.getItem("accessibility_tools")) || filteredTools;
+        const savedLanguage =
+            localStorage.getItem("accessibility_language") || languagesList[0].key;
+        const savedProfile = localStorage.getItem("accessibility_profile") || null;
+
+        setStoredTools(savedTools);
+        setStoredLanguage(savedLanguage);
+        setStoredProfile(savedProfile);
+    }, []);
 
     const [tools, setTools] = useState(storedTools);
     const [language, setLanguage] = useState(storedLanguage);
