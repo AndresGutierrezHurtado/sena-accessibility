@@ -11,11 +11,13 @@ const config = {
         {
             file: "dist/index.cjs.js",
             format: "cjs",
+            banner: `"use client";\n`,
             sourcemap: true,
         },
         {
             file: "dist/index.esm.js",
             format: "esm",
+            banner: `"use client";\n`,
             sourcemap: true,
         },
     ],
@@ -28,10 +30,10 @@ const config = {
             presets: ["@babel/preset-react"],
         }),
         postcss({
-            extract: 'index.css',
+            extract: "index.css",
             minimize: true,
         }),
-        terser(),
+        terser({ compress: { directives: false } }),
     ],
     external: ["react", "react-dom"],
 };
