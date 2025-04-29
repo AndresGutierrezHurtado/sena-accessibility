@@ -1,14 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export const MaskCursor = () => {
-    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: window.innerHeight / 2 });
+    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+    const [isClient, setIsClient] = useState(false);
 
     const handleMouseMove = (event) => {
         const { clientX, clientY } = event;
         setCursorPosition({ x: clientX, y: clientY });
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    useEffect(() => {
+        if (isClient) {
+            document.addEventListener("mousemove", handleMouseMove);
+
+            return () => {
+                document.removeEventListener("mousemove", handleMouseMove);
+            };
+        }
+    }, [isClient]);
+
+    if (!isClient) return null;
 
     return (
         <>
