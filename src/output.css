@@ -224,8 +224,8 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
-  .z-\[999\] {
-    z-index: 999;
+  .z-\[9998\] {
+    z-index: 9998;
   }
   .z-\[9999\] {
     z-index: 9999;
@@ -405,8 +405,8 @@
   .bg-widget-primary {
     background-color: var(--color-widget-primary);
   }
-  .bg-widget-primary\/80 {
-    background-color: color-mix(in oklab, var(--color-widget-primary) 80%, transparent);
+  .bg-widget-primary\/20 {
+    background-color: color-mix(in oklab, var(--color-widget-primary) 20%, transparent);
   }
   .bg-widget-secondary {
     background-color: var(--color-widget-secondary);
@@ -469,6 +469,9 @@
   }
   .text-widget-primary-content {
     color: var(--color-widget-primary-content);
+  }
+  .opacity-0 {
+    opacity: 0%;
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
