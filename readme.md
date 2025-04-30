@@ -46,13 +46,12 @@
     ```jsx
     // Editar los colores del componente styles:
     {
-      "widget-base": "#E5E5E5",
-      "widget-base-content": "#0A0A0A",
-      "widget-primary": "#082F49",
-      "widget-primary-content": "#FAFAFA",
-      "widget-secondary": "#0284C7",
-      "widget-secondary-content": "#FAFAFA",
-      "widget-divider": "#A3A3A3",
+      "widget-primary": "#082f49",
+      "widget-primary-content": "#fafafa",
+      "widget-base-100": "#ffffff",
+      "widget-base-200": "#e5e5e5",
+      "widget-base-content": "#0a0a0a",
+      "widget-divider": "#a3a3a3",
     }
     ```
 
@@ -91,20 +90,7 @@ import { AccessibilityWidget } from "sena-accessibility";
 import "sena-accessibility/dist/index.css";
 
 export default function AppLayout() {
-    const customTools = [
-        {
-            id: "text-size",
-            defaultValue: "large", // El tamaño de texto inicial será grande
-        },
-        {
-            id: "contrast",
-            defaultValue: "high", // El contraste inicial será alto
-        },
-        {
-            id: "highlighted-links",
-            defaultValue: true, // Resaltar enlaces estará activado por defecto
-        },
-    ];
+    const customTools = ["text-size", "contrast", "highlighted-links"];
 
     return (
         <>
