@@ -341,8 +341,8 @@ const useHightlightLinks = (tools) => {
     if (highlightLinks) {
         document.body.querySelectorAll("a[href]").forEach((link) => {
             link.style.fontWeight = 700;
-            link.style.backgroundColor = "var(--color-widget-secondary)";
-            link.style.color = "var(--color-widget-secondary-content)";
+            link.style.backgroundColor = "var(--color-widget-primary)";
+            link.style.color = "var(--color-widget-primary-content)";
         });
     } else {
         document.body.querySelectorAll("a[href]").forEach((link) => {

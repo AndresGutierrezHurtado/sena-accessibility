@@ -25,7 +25,7 @@ export default function Menu({ isOpen, setIsOpen }) {
                 <header className="w-full flex justify-between items-center p-5 text-widget-primary-content">
                     <h2 className="text-2xl font-bold tracking-[0.3px]">{t("title")}</h2>
                     <button
-                        className="border-[1.5px] border-widget-primary-content rounded-full p-1 active:scale-95 ease-out duration-300"
+                        className="border-[1.5px] border-widget-primary-content rounded-full p-1 active:scale-95 ease-out duration-300 cursor-pointer"
                         onClick={() => setIsOpen(false)}
                     >
                         <svg
@@ -44,7 +44,7 @@ export default function Menu({ isOpen, setIsOpen }) {
                         </svg>
                     </button>
                 </header>
-                <main className="bg-widget-base grow w-full rounded-t-xl p-5">
+                <main className="bg-widget-base-200 text-widget-base-content grow w-full rounded-t-xl p-5">
                     <div className="w-full h-full flex flex-col gap-5">
                         <section className="w-full flex items-center font-medium gap-2">
                             {(() => {
