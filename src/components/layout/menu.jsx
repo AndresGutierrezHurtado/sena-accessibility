@@ -30,8 +30,12 @@ export default function Menu({ isOpen, setIsOpen }) {
                 className="fixed top-0 bottom-0 w-full max-w-[var(--widget-size,500px)] bg-widget-primary duration-300 flex flex-col z-[9999]"
                 style={{
                     transform: `translateX(${isOpen ? "0" : "var(--widget-position)"})`,
+                    opacity: isOpen ? 1 : 0,
                     left: "var(--widget-left)",
                     right: "var(--widget-right)",
+                    transition: isOpen
+                        ? "transform 400ms ease-in-out, opacity 0ms ease-in-out"
+                        : "transform 400ms ease-in-out, opacity 0ms ease-in-out 400ms",
                 }}
             >
                 <header className="w-full flex justify-between items-center p-5 text-widget-primary-content">

@@ -3,7 +3,6 @@ import { useEffect } from "react";
 function useObserveDomChanges(tools) {
     useEffect(() => {
         const observer = new MutationObserver(() => {
-            console.log("observer");
             useChangeFontSize(tools);
             useChangeFontFamily(tools);
             useChangeLineHeight(tools);
