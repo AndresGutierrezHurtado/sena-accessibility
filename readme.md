@@ -114,8 +114,8 @@ import "sena-acessibility/dist/index.css";
 
 export default function AppLayout() {
     const customColors = {
-        "widget-primary": "#3b0764",
-        "widget-secondary": "#7e22ce",
+        "widget-primary": "#6b1daf",
+        "widget-primary-content": "#faf5ff",
     };
 
     return (
