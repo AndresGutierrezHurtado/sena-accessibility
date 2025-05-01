@@ -10,7 +10,9 @@ export default function Tool({ tool, update, t }) {
         <div
             key={tool.id}
             onClick={() => update(tool.id)}
-            className="bg-widget-base-100 p-5 rounded-lg flex flex-col items-center justify-center gap-2 font-medium leading-tight text-center cursor-pointer relative"
+            className={`bg-widget-base-100 p-5 rounded-lg flex flex-col items-center justify-center gap-2 font-medium leading-tight text-center cursor-pointer relative ${
+                ["cursor", "screen-reader"].includes(tool.id) ? "hidden lg:flex" : ""
+            }`}
             style={{
                 border: isActive ? "2px solid var(--color-widget-primary)" : "",
                 color: isActive
