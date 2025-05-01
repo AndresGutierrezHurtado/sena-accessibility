@@ -1,5 +1,31 @@
 import { useEffect } from "react";
 
+function useObserveDomChanges(tools) {
+    useEffect(() => {
+        const observer = new MutationObserver(() => {
+            console.log("observer");
+            useChangeFontSize(tools);
+            useChangeFontFamily(tools);
+            useChangeLineHeight(tools);
+            useChangeLetterSpacing(tools);
+            useChangeTextAlign(tools);
+            useChangeContrast(tools);
+            useHideImages(tools);
+            useHightlightLinks(tools);
+            useChangeWidgetSize(tools);
+            useChangeWidgetPosition(tools);
+            useChangeCursor(tools);
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+        });
+
+        return () => observer.disconnect();
+    }, [tools]);
+}
+
 export default function useApplyStyles(language, tools) {
     useEffect(() => {
         useChangeFontSize(tools);
@@ -16,6 +42,8 @@ export default function useApplyStyles(language, tools) {
     }, [language, tools]);
 
     useScreenReader(tools, language);
+
+    useObserveDomChanges(tools);
 }
 
 const useChangeFontSize = (tools) => {
