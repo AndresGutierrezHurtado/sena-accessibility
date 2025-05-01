@@ -7,7 +7,7 @@ export default function Button({ className = "", ...props }) {
     return (
         <button
             className={
-                "shadow-lg shadow-widget-base-content/30 fixed bottom-[5rem] mx-[6rem] w-[50px] h-[50px] bg-widget-primary-content border-[3px] border-widget-primary rounded-full flex items-center justify-center active:scale-95 ease-out duration-300 cursor-pointer z-[9999]" +
+                "shadow-lg shadow-widget-base-content/30 fixed bottom-[5rem] mx-[6rem] w-[50px] h-[50px] bg-widget-primary-content border-[3px] border-widget-primary rounded-full flex items-center justify-center active:scale-95 ease-out duration-300 cursor-pointer z-[9999] focus:outline-2 focus:outline-widget-primary outline-offset-1" +
                 className
             }
             style={{

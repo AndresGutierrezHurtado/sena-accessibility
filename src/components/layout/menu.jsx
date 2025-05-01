@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 // Context
 import { useAccessibilityContext } from "../../contexts/accessibilityContext.jsx";
@@ -6,23 +6,19 @@ import { useAccessibilityContext } from "../../contexts/accessibilityContext.jsx
 // Icons
 import { CloseIcon, ReloadIcon } from "../icons.jsx";
 import * as Icons from "../icons.jsx";
+
+// Components
 import Tool from "./tool.jsx";
 import Profile from "./profile.jsx";
 
+// Hooks
+import { useTabNavigator } from "../../hooks/useTabNavigator.js";
+
 export default function Menu({ isOpen, setIsOpen }) {
     const { tools, lists, values, update, translate: t } = useAccessibilityContext();
+    const initialFocusRef = useRef(null);
 
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "k") {
-                e.preventDefault();
-                setIsOpen((prev) => !prev);
-            }
-        };
-
-        document.addEventListener("keydown", handleKeyDown);
-        return () => document.removeEventListener("keydown", handleKeyDown);
-    }, []);
+    useTabNavigator(isOpen, setIsOpen, initialFocusRef);
 
     return (
         <>
@@ -37,12 +33,28 @@ export default function Menu({ isOpen, setIsOpen }) {
                         ? "transform 400ms ease-in-out, opacity 0ms ease-in-out"
                         : "transform 400ms ease-in-out, opacity 0ms ease-in-out 400ms",
                 }}
+                id="accessibility-menu"
             >
                 <header className="w-full flex justify-between items-center p-5 text-widget-primary-content">
-                    <h2 className="text-2xl font-bold tracking-[0.3px]">{t("title")}</h2>
+                    <h2
+                        className="text-2xl font-bold tracking-[0.3px] focus:outline-none"
+                        ref={initialFocusRef}
+                        tabIndex={-1}
+                    >
+                        {t("title")}
+                    </h2>
                     <button
-                        className="border-[1.5px] border-widget-primary-content rounded-full p-1 active:scale-95 ease-out duration-300 cursor-pointer"
+                        className="border-[1.5px] border-widget-primary-content rounded-full p-1 active:scale-95 ease-out duration-300 cursor-pointer focus:outline-2 outline-offset-2 focus:outline-widget-primary-content"
+                        aria-label={t("close")}
                         onClick={() => setIsOpen(false)}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                                e.preventDefault();
+                                setIsOpen(false);
+                            }
+                        }}
+                        role="button"
+                        tabIndex={0}
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -73,8 +85,9 @@ export default function Menu({ isOpen, setIsOpen }) {
                             })()}
 
                             <select
-                                className="w-full focus:outline-none"
+                                className="w-full focus:outline-2 focus:outline-widget-primary p-1 rounded-lg"
                                 value={values.language}
+                                tabIndex={0}
                                 onChange={(e) => update.setLanguage(e.target.value)}
                             >
                                 {lists.languages.map((lang) => (
@@ -97,7 +110,7 @@ export default function Menu({ isOpen, setIsOpen }) {
                             ))}
                         </section>
                         <hr />
-                        <section className="grow overflow-y-auto">
+                        <section className="grow overflow-y-auto p-1" tabIndex={-1}>
                             <div className="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-5 h-full max-h-[calc(100vh-90vh)]">
                                 {tools.map((tool) => (
                                     <Tool
@@ -113,14 +126,16 @@ export default function Menu({ isOpen, setIsOpen }) {
                         <section className="flex gap-5 items-center">
                             <button
                                 onClick={() => setIsOpen(false)}
-                                className="w-full bg-widget-primary text-widget-primary-content border border-widget-primary rounded py-1 font-medium flex justify-center items-center gap-2 cursor-pointer active:scale-95 ease-out duration-300"
+                                tabIndex={0}
+                                className="w-full bg-widget-primary text-widget-primary-content border border-widget-primary rounded py-1 font-medium flex justify-center items-center gap-2 cursor-pointer active:scale-95 ease-out duration-300 focus:outline-2 focus:outline-widget-primary"
                             >
                                 <CloseIcon size={20} />
                                 {t("close")}
                             </button>
                             <button
                                 onClick={() => update.updateProfileValue("default")}
-                                className="w-full bg-transparent text-widget-primary border border-widget-primary rounded py-1 font-medium flex justify-center items-center gap-2 cursor-pointer active:scale-95 ease-out duration-300"
+                                tabIndex={0}
+                                className="w-full bg-transparent text-widget-primary border border-widget-primary rounded py-1 font-medium flex justify-center items-center gap-2 cursor-pointer active:scale-95 ease-out duration-300 focus:outline-2 focus:outline-widget-primary"
                             >
                                 <ReloadIcon size={20} className="-rotate-x-180 rotate-180" />
                                 {t("reload")}

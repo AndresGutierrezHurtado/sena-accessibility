@@ -10,7 +10,15 @@ export default function Profile({ profile, currentProfile, update, t }) {
         <div
             key={profile.key}
             onClick={() => update(profile.key)}
-            className={`flex items-center gap-2  rounded-lg p-3 font-medium w-full cursor-pointer ${
+            onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    update(profile.key);
+                }
+            }}
+            role="button"
+            tabIndex={0}
+            className={`flex items-center gap-2  rounded-lg p-3 font-medium w-full cursor-pointer focus:outline-2 outline-offset-2 focus:outline-widget-primary ${
                 isActive
                     ? "bg-widget-primary text-widget-primary-content"
                     : "bg-widget-base-100 text-widget-base-content"

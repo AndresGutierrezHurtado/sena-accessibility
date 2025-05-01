@@ -6,7 +6,20 @@ export const ReadGuideCursor = () => {
 
     const handleMouseMove = (event) => {
         const { clientX, clientY } = event;
-        if (navigator.maxTouchPoints > 0) return;
+
+        const toMatch = [
+            /Android/i,
+            /webOS/i,
+            /iPhone/i,
+            /iPad/i,
+            /iPod/i,
+            /BlackBerry/i,
+            /Windows Phone/i,
+        ];
+
+        const isMobile = toMatch.some((toMatchItem) => navigator.userAgent.match(toMatchItem));
+        if (isMobile) return;
+
         setCursorPosition({ x: clientX, y: clientY });
     };
 
@@ -34,7 +47,7 @@ export const ReadGuideCursor = () => {
     return (
         <div
             className="read-guide h-[20px] bg-widget-primary border-t-2 border-b-2 border-black/10 hidden relative pointer-events-none  z-[9999]"
-            style={{ left: 0, right: 0, position: "fixed", top: cursorPosition.y - 21 }}
+            style={{ left: 0, right: 0, position: "fixed", top: cursorPosition.y + 5 }}
         >
             <div
                 className="read-guide__cursor w-[20px] h-[20px] bg-widget-primary border-t-2 border-l-2 border-black/10 rotate-45 absolute -translate-x-[10px] -translate-y-[11px] z-[10004]"
