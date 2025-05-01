@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Context
 import { useAccessibilityContext } from "../../contexts/accessibilityContext.jsx";
@@ -11,6 +11,18 @@ import Profile from "./profile.jsx";
 
 export default function Menu({ isOpen, setIsOpen }) {
     const { tools, lists, values, update, translate: t } = useAccessibilityContext();
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "k") {
+                e.preventDefault();
+                setIsOpen((prev) => !prev);
+            }
+        };
+
+        document.addEventListener("keydown", handleKeyDown);
+        return () => document.removeEventListener("keydown", handleKeyDown);
+    }, []);
 
     return (
         <>

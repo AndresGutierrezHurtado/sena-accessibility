@@ -1,5 +1,7 @@
 **Sena Accessibility Widget** es una librería de componentes React diseñada para mejorar la accesibilidad en sitios web. Proporciona un menú o sidebar con varias opciones de accesibilidad que se pueden personalizar fácilmente para adaptarse a las necesidades de cualquier sitio. Este widget es altamente modificable, permitiendo a los desarrolladores ajustar su apariencia y funcionalidad según los requerimientos de accesibilidad de sus usuarios.
 
+> ⚡ Accesibilidad rápida: El widget puede abrirse en cualquier momento presionando `Ctrl` + `Shift` + `K`.
+
 ## **Características**
 
 -   Un **sidebar de accesibilidad** que puede incluir opciones como:
