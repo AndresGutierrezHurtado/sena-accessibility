@@ -9,27 +9,37 @@ const AccessibilityContext = createContext();
 export const useAccessibilityContext = () => useContext(AccessibilityContext);
 
 export const AccessibilityProvider = ({ children, userTools }) => {
-    const filteredTools =
-        userTools.length > 0 ? toolsList.filter((tool) => userTools.includes(tool.id)) : toolsList;
+    // State variables
+    let filteredTools = toolsList.filter((tool) => userTools.includes(tool.id));
+    if (userTools.length === 0) filteredTools = toolsList;
 
-    const [storedTools, setStoredTools] = useState(filteredTools);
-    const [storedLanguage, setStoredLanguage] = useState(languagesList[0].key);
-    const [storedProfile, setStoredProfile] = useState(null);
+    const [tools, setTools] = useState(filteredTools);
+    const [language, setLanguage] = useState(languagesList[0].key);
+    const [profile, setProfile] = useState(null);
+    const [isInitialized, setIsInitialized] = useState(false);
 
+    // Validate saved tools in localStorage
     useEffect(() => {
-        const savedTools = JSON.parse(localStorage.getItem("accessibility_tools")) || filteredTools;
-        const savedLanguage =
-            localStorage.getItem("accessibility_language") || languagesList[0].key;
-        const savedProfile = localStorage.getItem("accessibility_profile") || null;
+        const savedTools = JSON.parse(localStorage.getItem("accessibility_tools"));
+        const savedLanguage = localStorage.getItem("accessibility_language");
+        const savedProfile = localStorage.getItem("accessibility_profile");
 
-        setStoredTools(savedTools);
-        setStoredLanguage(savedLanguage);
-        setStoredProfile(savedProfile);
+        if (savedTools) {
+            setTools(savedTools);
+        }
+        if (savedLanguage) setLanguage(savedLanguage);
+        if (savedProfile) setProfile(savedProfile);
+
+        setIsInitialized(true);
     }, []);
 
-    const [tools, setTools] = useState(storedTools);
-    const [language, setLanguage] = useState(storedLanguage);
-    const [profile, setProfile] = useState(storedProfile || null);
+    // saves the tools in localStorage
+    useEffect(() => {
+        if (!isInitialized) return;
+        localStorage.setItem("accessibility_tools", JSON.stringify(tools));
+        localStorage.setItem("accessibility_language", language);
+        localStorage.setItem("accessibility_profile", profile);
+    }, [tools, language, profile]);
 
     const translate = (key) => {
         const path = key.split(".");
@@ -64,30 +74,22 @@ export const AccessibilityProvider = ({ children, userTools }) => {
             return;
         }
 
-        const { key: profileKey, tools: profileTools } = profilesList.find(
-            (profile) => profile.key === key
-        );
-        const newTools = filteredTools.map((tool) => ({
-            ...tool,
-            currentValue: profileTools[tool.id] || tool.defaultValue,
-        }));
+        const { tools: profileTools } = profilesList.find((profile) => profile.key === key);
+
+        const newTools = [...tools].map((tool) => {
+            return {
+                ...tool,
+                currentValue: ["widget-size", "widget-position"].includes(tool.id)
+                    ? tool.currentValue
+                    : profileTools[tool.id] || tool.defaultValue,
+            };
+        });
+
         setTools(newTools);
         setProfile(key);
     };
 
     useApplyStyles(language, tools);
-
-    useEffect(() => {
-        localStorage.setItem("accessibility_tools", JSON.stringify(tools));
-    }, [tools]);
-
-    useEffect(() => {
-        localStorage.setItem("accessibility_language", language);
-    }, [language]);
-
-    useEffect(() => {
-        localStorage.setItem("accessibility_profile", profile || null);
-    }, [profile]);
 
     return (
         <AccessibilityContext.Provider
