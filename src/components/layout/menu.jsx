@@ -129,12 +129,11 @@ export default function Menu({ isOpen, setIsOpen }) {
                     </div>
                 </main>
             </div>
-            {isOpen && (
-                <div
-                    className="fixed top-0 bottom-0 left-0 right-0 bg-black/60 duration-300 z-[9998]"
-                    onClick={() => setIsOpen(false)}
-                ></div>
-            )}
+            <div
+                className="fixed top-0 bottom-0 left-0 right-0 bg-black/60 duration-300"
+                style={{ zIndex: isOpen ? 9998 : -100, opacity: isOpen ? 1 : 0 }}
+                onClick={() => setIsOpen(false)}
+            ></div>
         </>
     );
 }

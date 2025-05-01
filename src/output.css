@@ -43,6 +43,9 @@
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-widget-primary: #082f49;
@@ -223,9 +226,6 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
-  .z-\[9998\] {
-    z-index: 9998;
-  }
   .z-\[9999\] {
     z-index: 9999;
   }
@@ -282,9 +282,6 @@
   }
   .max-w-\[var\(--widget-size\,500px\)\] {
     max-width: var(--widget-size,500px);
-  }
-  .flex-grow {
-    flex-grow: 1;
   }
   .grow {
     flex-grow: 1;
@@ -389,14 +386,8 @@
   .border-black {
     border-color: var(--color-black);
   }
-  .border-black\/1 {
-    border-color: color-mix(in oklab, var(--color-black) 1%, transparent);
-  }
   .border-black\/10 {
     border-color: color-mix(in oklab, var(--color-black) 10%, transparent);
-  }
-  .border-black\/20 {
-    border-color: color-mix(in oklab, var(--color-black) 20%, transparent);
   }
   .border-widget-primary {
     border-color: var(--color-widget-primary);
@@ -431,12 +422,6 @@
   .bg-widget-base-content\/10 {
     background-color: color-mix(in oklab, var(--color-widget-base-content) 10%, transparent);
   }
-  .bg-widget-base-content\/30 {
-    background-color: color-mix(in oklab, var(--color-widget-base-content) 30%, transparent);
-  }
-  .bg-widget-base-content\/50 {
-    background-color: color-mix(in oklab, var(--color-widget-base-content) 50%, transparent);
-  }
   .bg-widget-primary {
     background-color: var(--color-widget-primary);
   }
@@ -448,9 +433,6 @@
   }
   .bg-widget-primary\/30 {
     background-color: color-mix(in oklab, var(--color-widget-primary) 30%, transparent);
-  }
-  .bg-widget-primary\/80 {
-    background-color: color-mix(in oklab, var(--color-widget-primary) 80%, transparent);
   }
   .p-1 {
     padding: calc(var(--spacing) * 1);
@@ -534,15 +516,17 @@
   .shadow-widget-base-content\/30 {
     --tw-shadow-color: color-mix(in oklab, var(--color-widget-base-content) 30%, transparent);
   }
-  .shadow-widget-base-content\/50 {
-    --tw-shadow-color: color-mix(in oklab, var(--color-widget-base-content) 50%, transparent);
-  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .duration-200 {
     --tw-duration: 200ms;
@@ -551,6 +535,10 @@
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
+  }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
   }
   .ease-out {
     --tw-ease: var(--ease-out);
@@ -568,6 +556,11 @@
       --tw-scale-y: 95%;
       --tw-scale-z: 95%;
       scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+  .lg\:flex {
+    @media (width >= 64rem) {
+      display: flex;
     }
   }
 }
