@@ -19,6 +19,7 @@ export default function useApplyStyles(language, tools) {
 }
 
 const useChangeFontSize = (tools) => {
+    if (!tools.find((tool) => tool.id === "text-size")) return;
     const fontSize = tools.find((tool) => tool.id === "text-size").currentValue;
     let multiplier = 1;
 
@@ -102,6 +103,7 @@ const useChangeFontSize = (tools) => {
 };
 
 const useChangeFontFamily = (tools) => {
+    if (!tools.find((tool) => tool.id === "text-font")) return;
     const fontFamily = tools.find((tool) => tool.id === "text-font").currentValue;
 
     const texts = document.querySelectorAll(
@@ -133,6 +135,7 @@ const useChangeFontFamily = (tools) => {
 };
 
 const useChangeLineHeight = (tools) => {
+    if (!tools.find((tool) => tool.id === "text-line-height")) return;
     const leading = tools.find((tool) => tool.id === "text-line-height").currentValue;
     let multiplier = 1;
 
@@ -181,6 +184,7 @@ const useChangeLineHeight = (tools) => {
 };
 
 const useChangeLetterSpacing = (tools) => {
+    if (!tools.find((tool) => tool.id === "text-spacing")) return;
     const letterSpacing = tools.find((tool) => tool.id === "text-spacing").currentValue;
     let multiplier = 1;
 
@@ -233,6 +237,7 @@ const useChangeLetterSpacing = (tools) => {
 };
 
 const useChangeTextAlign = (tools) => {
+    if (!tools.find((tool) => tool.id === "text-align")) return;
     const textAlign = tools.find((tool) => tool.id === "text-align").currentValue;
 
     const texts = document.querySelectorAll(
@@ -274,7 +279,7 @@ const useChangeTextAlign = (tools) => {
 
 const useChangeContrast = (tools) => {
     // Contrast
-    const contrast = tools.find((tool) => tool.id === "contrast").currentValue;
+    const contrast = tools.find((tool) => tool.id === "contrast")?.currentValue;
 
     let contrastValue = "100%";
 
@@ -300,7 +305,7 @@ const useChangeContrast = (tools) => {
     }
 
     // Color saturation
-    const saturation = tools.find((tool) => tool.id === "color-saturation").currentValue;
+    const saturation = tools.find((tool) => tool.id === "color-saturation")?.currentValue;
 
     let saturationValue = "100%";
 
@@ -326,6 +331,7 @@ const useChangeContrast = (tools) => {
 };
 
 const useHideImages = (tools) => {
+    if (!tools.find((tool) => tool.id === "hide-images")) return;
     const hideImages = tools.find((tool) => tool.id === "hide-images").currentValue;
 
     if (hideImages) {
@@ -336,6 +342,7 @@ const useHideImages = (tools) => {
 };
 
 const useHightlightLinks = (tools) => {
+    if (!tools.find((tool) => tool.id === "highlight-links")) return;
     const highlightLinks = tools.find((tool) => tool.id === "highlight-links").currentValue;
 
     if (highlightLinks) {
@@ -354,6 +361,7 @@ const useHightlightLinks = (tools) => {
 };
 
 const useChangeWidgetSize = (tools) => {
+    if (!tools.find((tool) => tool.id === "widget-size")) return;
     const widgetSize = tools.find((tool) => tool.id === "widget-size").currentValue;
     let size = 1;
 
@@ -376,6 +384,7 @@ const useChangeWidgetSize = (tools) => {
 };
 
 const useChangeWidgetPosition = (tools) => {
+    if (!tools.find((tool) => tool.id === "widget-position")) return;
     const widgetPosition = tools.find((tool) => tool.id === "widget-position").currentValue;
     let transform = "";
     let right = "";
@@ -400,6 +409,7 @@ const useChangeWidgetPosition = (tools) => {
 };
 
 export const useChangeCursor = (settings) => {
+    if (!settings.find((setting) => setting.id === "cursor")) return;
     const cursor = settings.find((setting) => setting.id === "cursor").currentValue;
 
     switch (cursor) {
@@ -454,6 +464,7 @@ export const useChangeCursor = (settings) => {
 };
 
 export const useScreenReader = (tools, language) => {
+    if (!tools.find((tool) => tool.id === "screen-reader")) return;
     useEffect(() => {
         if (typeof window.speechSynthesis === "undefined") return;
 
