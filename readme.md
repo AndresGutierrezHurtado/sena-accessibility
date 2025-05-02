@@ -30,18 +30,49 @@
 
 ## 🧩 1. Installation and Basic Usage
 
-Run the following command in your terminal within your React project:
+### 📦 Installation
+
+Run the following command in your terminal to install the library in your React project:
 
 ```bash
 npm install sena-accessibility
 ```
 
-Import the component and the stylesheet in your main layout or wherever you want the widget to appear:
+> [!WARNING]
+> 💡 Make sure you have **TailwindCSS** properly configured in your project, as it is a required dependency for the widget to work.
+
+---
+
+### 🚀 Integration into your project
+
+#### In a traditional **React** application:
 
 ```jsx
 import React from "react";
 import { AccessibilityWidget } from "sena-accessibility";
-import "sena-accessibility/dist/index.css";
+
+export default function AppLayout() {
+    return (
+        <>
+            <Header />
+            <Content />
+            <AccessibilityWidget />
+            <Footer />
+        </>
+    );
+}
+```
+
+#### In a **Next.js** application (SSR disabled):
+
+```jsx
+import React from "react";
+import dynamic from "next/dynamic";
+
+const AccessibilityWidget = dynamic(
+    () => import("sena-accessibility").then((mod) => mod.AccessibilityWidget),
+    { ssr: false } // Prevent issues with server-side rendering
+);
 
 export default function AppLayout() {
     return (
