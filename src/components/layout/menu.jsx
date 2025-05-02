@@ -23,7 +23,7 @@ export default function Menu({ isOpen, setIsOpen }) {
     return (
         <>
             <div
-                className="fixed top-0 bottom-0 w-full max-w-[var(--widget-size,500px)] bg-widget-primary duration-300 flex flex-col z-[9999]"
+                className="sena:fixed sena:top-0 sena:bottom-0 sena:w-full sena:max-w-[var(--widget-size,500px)] sena:bg-widget-primary sena:duration-300 sena:flex sena:flex-col sena:z-[9999]"
                 style={{
                     transform: `translateX(${isOpen ? "0" : "var(--widget-position)"})`,
                     opacity: isOpen ? 1 : 0,
@@ -35,16 +35,16 @@ export default function Menu({ isOpen, setIsOpen }) {
                 }}
                 id="accessibility-menu"
             >
-                <header className="w-full flex justify-between items-center p-5 text-widget-primary-content">
+                <header className="sena:w-full sena:flex sena:justify-between sena:items-center sena:p-5 sena:text-widget-primary-content">
                     <h2
-                        className="text-2xl font-bold tracking-[0.3px] focus:outline-none"
+                        className="sena:text-2xl sena:font-bold sena:tracking-[0.3px] sena:focus:outline-none"
                         ref={initialFocusRef}
                         tabIndex={-1}
                     >
                         {t("title")}
                     </h2>
                     <button
-                        className="border-[1.5px] border-widget-primary-content rounded-full p-1 active:scale-95 ease-out duration-300 cursor-pointer focus:outline-2 outline-offset-2 focus:outline-widget-primary-content"
+                        className="sena:border-[1.5px] sena:border-widget-primary-content sena:rounded-full sena:p-1 sena:active:scale-95 sena:ease-out sena:duration-300 sena:cursor-pointer sena:focus:outline-2 sena:outline-offset-2 sena:focus:outline-widget-primary-content"
                         aria-label={t("close")}
                         onClick={() => setIsOpen(false)}
                         onKeyDown={(e) => {
@@ -62,7 +62,7 @@ export default function Menu({ isOpen, setIsOpen }) {
                             viewBox="0 0 24 24"
                             strokeWidth={1.5}
                             stroke="currentColor"
-                            className="w-6 h-6"
+                            className="sena:w-6 sena:h-6"
                         >
                             <path
                                 strokeLinecap="round"
@@ -72,9 +72,9 @@ export default function Menu({ isOpen, setIsOpen }) {
                         </svg>
                     </button>
                 </header>
-                <main className="bg-widget-base-200 text-widget-base-content grow w-full rounded-t-xl p-5">
-                    <div className="w-full h-full flex flex-col gap-5">
-                        <section className="w-full flex items-center font-medium gap-2">
+                <main className="sena:bg-widget-base-200 sena:text-widget-base-content sena:grow sena:w-full sena:rounded-t-xl sena:p-5">
+                    <div className="sena:w-full sena:h-full sena:flex sena:flex-col sena:gap-5">
+                        <section className="sena:w-full sena:flex sena:items-center sena:font-medium sena:gap-2">
                             {(() => {
                                 const Icon =
                                     Icons[
@@ -85,7 +85,7 @@ export default function Menu({ isOpen, setIsOpen }) {
                             })()}
 
                             <select
-                                className="w-full focus:outline-2 focus:outline-widget-primary p-1 rounded-lg"
+                                className="sena:w-full sena:focus:outline-2 sena:focus:outline-widget-primary sena:p-1 sena:rounded-lg"
                                 value={values.language}
                                 tabIndex={0}
                                 onChange={(e) => update.setLanguage(e.target.value)}
@@ -98,7 +98,7 @@ export default function Menu({ isOpen, setIsOpen }) {
                             </select>
                         </section>
                         <hr />
-                        <section className="w-full grid grid-cols-2 gap-5">
+                        <section className="sena:w-full sena:grid sena:grid-cols-2 sena:gap-5">
                             {lists.profiles.map((profile) => (
                                 <Profile
                                     key={profile.key}
@@ -110,8 +110,8 @@ export default function Menu({ isOpen, setIsOpen }) {
                             ))}
                         </section>
                         <hr />
-                        <section className="grow overflow-y-auto p-1" tabIndex={-1}>
-                            <div className="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-5 h-full max-h-[calc(100vh-90vh)]">
+                        <section className="sena:grow sena:overflow-y-auto sena:p-1" tabIndex={-1}>
+                            <div className="sena:grid sena:grid-cols-[repeat(auto-fill,minmax(120px,1fr))] sena:gap-5 sena:h-full sena:max-h-[calc(100vh-90vh)]">
                                 {tools.map((tool) => (
                                     <Tool
                                         key={tool.id}
@@ -123,11 +123,11 @@ export default function Menu({ isOpen, setIsOpen }) {
                             </div>
                         </section>
                         <hr />
-                        <section className="flex gap-5 items-center">
+                        <section className="sena:flex sena:gap-5 sena:items-center">
                             <button
                                 onClick={() => setIsOpen(false)}
                                 tabIndex={0}
-                                className="w-full bg-widget-primary text-widget-primary-content border border-widget-primary rounded py-1 font-medium flex justify-center items-center gap-2 cursor-pointer active:scale-95 ease-out duration-300 focus:outline-2 focus:outline-widget-primary"
+                                className="sena:w-full sena:bg-widget-primary sena:text-widget-primary-content sena:border sena:border-widget-primary sena:rounded sena:py-1 sena:font-medium sena:flex justify-center sena:items-center sena:gap-2 sena:cursor-pointer sena:active:scale-95 sena:ease-out sena:duration-300 sena:focus:outline-2 sena:focus:outline-widget-primary"
                             >
                                 <CloseIcon size={20} />
                                 {t("close")}
@@ -135,9 +135,9 @@ export default function Menu({ isOpen, setIsOpen }) {
                             <button
                                 onClick={() => update.updateProfileValue("default")}
                                 tabIndex={0}
-                                className="w-full bg-transparent text-widget-primary border border-widget-primary rounded py-1 font-medium flex justify-center items-center gap-2 cursor-pointer active:scale-95 ease-out duration-300 focus:outline-2 focus:outline-widget-primary"
+                                className="sena:w-full sena:bg-transparent sena:text-widget-primary sena:border sena:border-widget-primary sena:rounded sena:py-1 sena:font-medium sena:flex sena:justify-center sena:items-center sena:gap-2 sena:cursor-pointer sena:active:scale-95 sena:ease-out sena:duration-300 sena:focus:outline-2 sena:focus:outline-widget-primary"
                             >
-                                <ReloadIcon size={20} className="-rotate-x-180 rotate-180" />
+                                <ReloadIcon size={20} className="sena:-rotate-x-180 sena:rotate-180" />
                                 {t("reload")}
                             </button>
                         </section>
@@ -145,7 +145,7 @@ export default function Menu({ isOpen, setIsOpen }) {
                 </main>
             </div>
             <div
-                className="fixed top-0 bottom-0 left-0 right-0 bg-black/60 duration-300"
+                className="sena:fixed sena:top-0 bottom-0 left-0 right-0 bg-black/60 duration-300"
                 style={{ zIndex: isOpen ? 9998 : -100, opacity: isOpen ? 1 : 0 }}
                 onClick={() => setIsOpen(false)}
             ></div>

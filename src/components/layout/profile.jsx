@@ -18,22 +18,22 @@ export default function Profile({ profile, currentProfile, update, t }) {
             }}
             role="button"
             tabIndex={0}
-            className={`flex items-center gap-2  rounded-lg p-3 font-medium w-full cursor-pointer focus:outline-2 outline-offset-2 focus:outline-widget-primary ${
+            className={`sena:flex sena:items-center sena:gap-2  sena:rounded-lg sena:p-3 sena:font-medium sena:w-full sena:cursor-pointer sena:focus:outline-2 sena:outline-offset-2 sena:focus:outline-widget-primary ${
                 isActive
-                    ? "bg-widget-primary text-widget-primary-content"
-                    : "bg-widget-base-100 text-widget-base-content"
+                    ? "sena:bg-widget-primary sena:text-widget-primary-content"
+                    : "sena:bg-widget-base-100 sena:text-widget-base-content"
             }`}
         >
             <div
-                className={`rounded-full p-2 flex items-center justify-center ${
+                className={`sena:rounded-full sena:p-2 flex sena:items-center sena:justify-center ${
                     isActive
-                        ? "bg-widget-primary-content/10 text-widget-primary-content"
-                        : "bg-widget-base-content/10 text-widget-base-content"
+                        ? "sena:bg-widget-primary-content/10 sena:text-widget-primary-content"
+                        : "sena:bg-widget-base-content/10 sena:text-widget-base-content"
                 }`}
             >
                 <Icon size={17} />
             </div>
-            <div className="grow">{t(profile.label)}</div>
+            <div className="sena:grow">{t(profile.label)}</div>
             {isActive && <Icons.CheckIcon size={16} />}
         </div>
     );

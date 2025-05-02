@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss" prefix(sena);
 @theme {
     --color-widget-primary: #082f49;
     --color-widget-primary-content: #fafafa;
@@ -9,10 +9,10 @@
 }
 
 hr {
-    border-color: var(--color-widget-divider);
+    border-color: var(--sena-color-widget-divider);
 }
 
 #button-accessibility svg {
-    fill: var(--color-widget-primary);
-    stroke: var(--color-widget-primary);
+    fill: var(--sena-color-widget-primary);
+    stroke: var(--sena-color-widget-primary);
 }

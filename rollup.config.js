@@ -30,7 +30,7 @@ const config = {
             presets: ["@babel/preset-react"],
         }),
         postcss({
-            extract: "index.css",
+            extract: false,
             minimize: true,
         }),
         terser({ compress: { directives: false } }),

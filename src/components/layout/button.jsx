@@ -7,7 +7,7 @@ export default function Button({ className = "", ...props }) {
     return (
         <button
             className={
-                "shadow-lg shadow-widget-base-content/30 fixed bottom-[5rem] mx-[6rem] w-[50px] h-[50px] bg-widget-primary-content border-[3px] border-widget-primary rounded-full flex items-center justify-center active:scale-95 ease-out duration-300 cursor-pointer z-[9999] focus:outline-2 focus:outline-widget-primary outline-offset-1" +
+                "sena:shadow-lg sena:shadow-widget-base-content/30 sena:fixed sena:bottom-[5rem] sena:mx-[6rem] sena:w-[50px] sena:h-[50px] sena:bg-widget-primary-content sena:border-[3px] sena:border-widget-primary sena:rounded-full sena:flex sena:items-center sena:justify-center sena:active:scale-95 sena:ease-out sena:duration-300 sena:cursor-pointer sena:z-[9999] sena:focus:outline-2 sena:focus:outline-widget-primary sena:outline-offset-2" +
                 className
             }
             style={{

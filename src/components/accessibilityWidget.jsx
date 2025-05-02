@@ -15,7 +15,7 @@ export default function AccessibilityWidget({ tools = [], styles = {}, ...props 
 
     useEffect(() => {
         for (const [key, value] of Object.entries(styles)) {
-            document.documentElement.style.setProperty(`--color-${key}`, value);
+            document.documentElement.style.setProperty(`--sena-color-${key}`, value);
         }
     }, [styles]);
 

@@ -28,7 +28,7 @@ export const MaskCursor = () => {
     return (
         <>
             <div
-                className="mask__overlay hidden fixed left-0 right-0 h-auto bg-black/60 z-[9999]"
+                className="mask__overlay sena:fixed sena:left-0 sena:right-0 sena:h-auto sena:bg-black/60 sena:z-[9999]"
                 onMouseMove={handleMouseMove}
                 style={{
                     borderBottom: "3px solid black",
@@ -40,7 +40,7 @@ export const MaskCursor = () => {
                 }}
             ></div>
             <div
-                className="mask__overlay hidden fixed left-0 right-0 h-auto bg-black/60 z-[9999]"
+                className="mask__overlay sena:fixed sena:left-0 sena:right-0 sena:h-auto sena:bg-black/60 sena:z-[9999]"
                 onMouseMove={handleMouseMove}
                 style={{
                     borderTop: "3px solid black",
