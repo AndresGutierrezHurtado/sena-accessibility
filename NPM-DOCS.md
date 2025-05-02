@@ -10,31 +10,63 @@
 ## ✨ Features
 
 -   ♿ **Accessibility Tools** – Improve UX for users with disabilities.
--   ⌨️ **Keyboard-Friendly** – Fully operable via keyboard navigation.
--   🎨 **Custom Styles** – Modify widget colors with the `styles` prop.
--   🧰 **Modular Tools** – Enable/disable features with the `tools` prop.
--   💾 **Persistent Settings** – Preferences stored in `localStorage`.
--   📁 **Predefined Profiles** – Ready-to-use configs for common needs.
--   ⚡ **Next.js Support** – Fully compatible with server-side rendering.
+-   ⌨️ **Keyboard-Friendly** – Fully operable via keyboard.
+-   🎨 **Custom Styles** – Customize colors using the `styles` prop.
+-   🧰 **Modular Tools** – Enable/disable features via the `tools` prop.
+-   💾 **Persistent Settings** – Preferences are saved in `localStorage`.
+-   📁 **Predefined Profiles** – Ready-to-use setups for common needs.
+-   ⚡ **Next.js Support** – Works with server-side rendering.
 
 ![widget](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-accessibility/refs/heads/main//docs/screenshots/index.png)
 
 ---
 
-## 🚀 Installation
+## 🧩 1. Installation and Basic Usage
+
+### 📦 Installation
+
+Run the following command in your terminal to install the library in your React project:
 
 ```bash
 npm install sena-accessibility
 ```
 
+> [!WARNING]
+> 💡 Make sure you have **TailwindCSS** properly configured in your project, as it is a required dependency for the widget to work.
+
 ---
 
-## 📦 Usage Example
+### 🚀 Integration into your project
+
+#### In a traditional **React** application:
 
 ```jsx
 import React from "react";
 import { AccessibilityWidget } from "sena-accessibility";
 import "sena-accessibility/dist/index.css";
+
+export default function AppLayout() {
+    return (
+        <>
+            <Header />
+            <Content />
+            <AccessibilityWidget />
+            <Footer />
+        </>
+    );
+}
+```
+
+#### In a **Next.js** application (SSR disabled):
+
+```jsx
+import React from "react";
+import dynamic from "next/dynamic";
+
+const AccessibilityWidget = dynamic(
+    () => import("sena-accessibility").then((mod) => mod.AccessibilityWidget),
+    { ssr: false } // Prevents issues with server-side rendering
+);
 
 export default function AppLayout() {
     return (
@@ -112,7 +144,7 @@ const styles = {
 
 ### 📁 Predefined Profiles
 
-Use default accessibility settings based on common needs.
+Use predefined accessibility settings for common needs.
 
 ![profiles](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-accessibility/refs/heads/main//docs/screenshots/profile.png)
 
@@ -143,21 +175,21 @@ Use default accessibility settings based on common needs.
 ## ❓ FAQ
 
 **Can I use only some widget functions?**
-Yes. Use the `tools` prop to define them.
+Yes. Use the `tools` prop to define which ones.
 
 **Does it support keyboard navigation?**
-Yes. It is fully keyboard accessible.
+Yes. The widget is fully keyboard-accessible.
 
-**Are user settings saved?**
-Yes. It uses `localStorage` to persist preferences.
+**Are user preferences saved?**
+Yes. Settings are stored using `localStorage`.
 
 ---
 
 ## 🧪 Testing & Validation
 
--   ✅ Verify compatibility across all major browsers.
--   ✅ Confirm screen reader and keyboard-only functionality.
--   ✅ Test that custom styles apply as expected.
+-   ✅ Test across all major browsers.
+-   ✅ Confirm compatibility with screen readers and keyboard-only use.
+-   ✅ Ensure custom styles are applied correctly.
 
 ---
 
