@@ -23,7 +23,6 @@ export const useTabNavigator = (isOpen, setIsOpen, initialFocusRef) => {
                 const $focusableElements = $menu.querySelectorAll("[tabindex]:not([tabindex='-1'])");
 
                 const currentIndex = Array.from($focusableElements).indexOf(document.activeElement);
-                console.log(Array.from($focusableElements), currentIndex);
 
                 let nextIndex =
                     e.key === "ArrowDown" || e.key === "ArrowRight"

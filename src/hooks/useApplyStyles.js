@@ -411,8 +411,7 @@ const useChangeWidgetSize = (tools) => {
 };
 
 const useChangeWidgetPosition = (tools) => {
-    if (!tools.find((tool) => tool.id === "widget-position")) return;
-    const widgetPosition = tools.find((tool) => tool.id === "widget-position").currentValue;
+    const widgetPosition = tools.find((tool) => tool.id === "widget-position")?.currentValue;
     let transform = "";
     let right = "";
     let left = "";
@@ -491,8 +490,8 @@ export const useChangeCursor = (settings) => {
 };
 
 export const useScreenReader = (tools, language) => {
-    if (!tools.find((tool) => tool.id === "screen-reader")) return;
     useEffect(() => {
+        if (!tools.find((tool) => tool.id === "screen-reader")) return;
         if (typeof window.speechSynthesis === "undefined") return;
 
         const screenReader = tools.find((s) => s.id === "screen-reader").currentValue;

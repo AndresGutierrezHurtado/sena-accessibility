@@ -25,6 +25,8 @@ export const AccessibilityProvider = ({ children, userTools }) => {
         const savedProfile = localStorage.getItem("accessibility_profile");
 
         if (savedTools) {
+            let filteredSavedTools = savedTools.filter((tool) => userTools.includes(tool.id));
+            if (userTools.length === 0) filteredSavedTools = savedTools;
             setTools(savedTools);
         }
         if (savedLanguage) setLanguage(savedLanguage);
@@ -39,7 +41,7 @@ export const AccessibilityProvider = ({ children, userTools }) => {
         localStorage.setItem("accessibility_tools", JSON.stringify(tools));
         localStorage.setItem("accessibility_language", language);
         localStorage.setItem("accessibility_profile", profile);
-    }, [tools, language, profile]);
+    }, [JSON.stringify(tools), language, profile]);
 
     const translate = (key) => {
         const path = key.split(".");
@@ -57,7 +59,10 @@ export const AccessibilityProvider = ({ children, userTools }) => {
                 const currentValue = tool.currentValue;
                 const index = tool.options.indexOf(currentValue);
                 const nextIndex = index === tool.options.length - 1 ? 0 : index + 1;
-                tool.currentValue = tool.options[nextIndex];
+                return {
+                    ...tool,
+                    currentValue: tool.options[nextIndex],
+                };
             }
 
             return tool;
