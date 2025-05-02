@@ -25,9 +25,10 @@ export const AccessibilityProvider = ({ children, userTools }) => {
         const savedProfile = localStorage.getItem("accessibility_profile");
 
         if (savedTools) {
-            let filteredSavedTools = savedTools.filter((tool) => userTools.includes(tool.id));
-            if (userTools.length === 0) filteredSavedTools = savedTools;
-            setTools(savedTools);
+            const isSavedToolsValid = savedTools.every((tool) => userTools.includes(tool.id));
+
+            if (isSavedToolsValid && userTools.length > 0) setTools(savedTools);
+            else setTools(filteredTools);
         }
         if (savedLanguage) setLanguage(savedLanguage);
         if (savedProfile) setProfile(savedProfile);
