@@ -1,8 +1,8 @@
-# 📘 Sena Accessibility - Menú lateral de accesibilidad
+# 📘 Sena a11y - Menú lateral de accesibilidad
 
-[English Version](https://github.com/AndresGutierrezHurtado/sena-accessibility/blob/main/README.md)
+[English Version](https://github.com/AndresGutierrezHurtado/sena-a11y/blob/main/README.md)
 
-**Sena Accessibility** es una libreria con un componente para proyectos **React** cont **TailwindCSS** que añade un menú lateral personalizable para mejorar la accesibilidad de cualquier sitio web. Está diseñada para integrarse fácilmente en proyectos modernos y accesibles.
+**Sena a11y** es una libreria con un componente para proyectos **React** cont **TailwindCSS** que añade un menú lateral personalizable para mejorar la accesibilidad de cualquier sitio web. Está diseñada para integrarse fácilmente en proyectos modernos y accesibles.
 
 > [!IMPORTANT]
 > ⚠️ **Requisitos**: Esta librería está pensada para usarse en proyectos que utilicen **TailwindCSS** como sistema de estilos.
@@ -11,7 +11,7 @@
 > ⚡ **Atajo rápido**: Presiona `Ctrl + Shift + K` para abrir el widget desde cualquier parte del sitio.  
 > 🎮 **Navegación con teclado**: El widget puede ser completamente operado con teclado.
 
-![widget](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-accessibility/refs/heads/main//docs/screenshots/index.png)
+![widget](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-a11y/refs/heads/main//docs/screenshots/index.png)
 
 ---
 
@@ -24,7 +24,7 @@
 -   💾 **Persistencia de configuración**: Las preferencias del usuario se guardan automáticamente con `localStorage`.
 -   📂 **Perfiles predefinidos**: Soporte para aplicar configuraciones predeterminadas según necesidades comunes de accesibilidad.
 
-![profiles](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-accessibility/refs/heads/main//docs/screenshots/profile.png)
+![profiles](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-a11y/refs/heads/main//docs/screenshots/profile.png)
 
 ---
 
@@ -35,7 +35,7 @@
 Ejecuta el siguiente comando en tu terminal para instalar la librería dentro de tu proyecto React:
 
 ```bash
-npm install sena-accessibility
+npm install sena-a11y
 ```
 > [!WARNING]
 > 💡 Asegúrate de tener **TailwindCSS** correctamente configurado en tu proyecto, ya que es un requisito indispensable para el funcionamiento del widget.
@@ -48,7 +48,7 @@ npm install sena-accessibility
 
 ```jsx
 import React from "react";
-import { AccessibilityWidget } from "sena-accessibility";
+import { AccessibilityWidget } from "sena-a11y";
 
 export default function AppLayout() {
     return (
@@ -69,7 +69,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 const AccessibilityWidget = dynamic(
-    () => import("sena-accessibility").then((mod) => mod.AccessibilityWidget),
+    () => import("sena-a11y").then((mod) => mod.AccessibilityWidget),
     { ssr: false } // Evita problemas con el renderizado del lado del servidor
 );
 
@@ -119,7 +119,7 @@ const customTools = ["text-size", "contrast", "highlight-links"];
 ];
 ```
 
-![tools](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-accessibility/refs/heads/main//docs/screenshots/tools.png)
+![tools](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-a11y/refs/heads/main//docs/screenshots/tools.png)
 
 ---
 
@@ -151,7 +151,7 @@ const customColors = {
 | `widget-base-content`    | Color del texto general del contenido del widget.              |
 | `widget-divider`         | Color de los divisores entre secciones o controles del widget. |
 
-![styles](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-accessibility/refs/heads/main//docs/screenshots/styles.png)
+![styles](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-a11y/refs/heads/main//docs/screenshots/styles.png)
 
 ---
 

@@ -1,9 +1,9 @@
-# 📘 Sena Accessibility – Accessibility Side Menu for React + TailwindCSS
+# 📘 Sena a11y – Accessibility Side Menu for React + TailwindCSS
 
-**Sena Accessibility** is a lightweight and customizable side menu component designed to enhance web accessibility in modern **React** projects using **TailwindCSS**. It is also fully compatible with **Next.js (Server-Side Rendering)**.
+**Sena a11y** is a lightweight and customizable side menu component designed to enhance web accessibility in modern **React** projects using **TailwindCSS**. It is also fully compatible with **Next.js (Server-Side Rendering)**.
 
 > 🧩 Easily plug & play into any project.  
-> 🔗 [View on GitHub](https://github.com/AndresGutierrezHurtado/sena-accessibility) – Full documentation, demos, and contribution guidelines available.
+> 🔗 [View on GitHub](https://github.com/AndresGutierrezHurtado/sena-a11y) – Full documentation, demos, and contribution guidelines available.
 
 ---
 
@@ -17,7 +17,7 @@
 -   📁 **Predefined Profiles** – Ready-to-use setups for common needs.
 -   ⚡ **Next.js Support** – Works with server-side rendering.
 
-![widget](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-accessibility/refs/heads/main//docs/screenshots/index.png)
+![widget](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-a11y/refs/heads/main//docs/screenshots/index.png)
 
 ---
 
@@ -28,7 +28,7 @@
 Run the following command in your terminal to install the library in your React project:
 
 ```bash
-npm install sena-accessibility
+npm install sena-a11y
 ```
 
 > [!WARNING]
@@ -42,8 +42,7 @@ npm install sena-accessibility
 
 ```jsx
 import React from "react";
-import { AccessibilityWidget } from "sena-accessibility";
-import "sena-accessibility/dist/index.css";
+import { AccessibilityWidget } from "sena-a11y";
 
 export default function AppLayout() {
     return (
@@ -64,7 +63,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 const AccessibilityWidget = dynamic(
-    () => import("sena-accessibility").then((mod) => mod.AccessibilityWidget),
+    () => import("sena-a11y").then((mod) => mod.AccessibilityWidget),
     { ssr: false } // Prevents issues with server-side rendering
 );
 
@@ -111,7 +110,7 @@ const tools = ["text-size", "contrast", "highlight-links"];
 ];
 ```
 
-![tools](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-accessibility/refs/heads/main//docs/screenshots/tools.png)
+![tools](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-a11y/refs/heads/main//docs/screenshots/tools.png)
 
 ---
 
@@ -138,7 +137,7 @@ const styles = {
 | `widget-base-content`    | General text color.                              |
 | `widget-divider`         | Color for section/control dividers.              |
 
-![styles](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-accessibility/refs/heads/main//docs/screenshots/styles.png)
+![styles](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-a11y/refs/heads/main//docs/screenshots/styles.png)
 
 ---
 
@@ -146,7 +145,7 @@ const styles = {
 
 Use predefined accessibility settings for common needs.
 
-![profiles](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-accessibility/refs/heads/main//docs/screenshots/profile.png)
+![profiles](https://raw.githubusercontent.com/AndresGutierrezHurtado/sena-a11y/refs/heads/main//docs/screenshots/profile.png)
 
 ---
 

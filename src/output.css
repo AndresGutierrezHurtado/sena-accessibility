@@ -211,9 +211,6 @@
   .sena\:grid {
     display: grid;
   }
-  .sena\:hidden {
-    display: none;
-  }
   .sena\:h-6 {
     height: calc(var(--sena-spacing) * 6);
   }
@@ -439,9 +436,6 @@
   }
   .sena\:shadow-widget-base-content\/30 {
     --tw-shadow-color: color-mix(in oklab, var(--sena-color-widget-base-content) 30%, transparent);
-  }
-  .sena\:outline-offset-1 {
-    outline-offset: 1px;
   }
   .sena\:outline-offset-2 {
     outline-offset: 2px;

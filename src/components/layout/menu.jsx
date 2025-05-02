@@ -145,7 +145,7 @@ export default function Menu({ isOpen, setIsOpen }) {
                 </main>
             </div>
             <div
-                className="sena:fixed sena:top-0 bottom-0 left-0 right-0 bg-black/60 duration-300"
+                className="sena:fixed sena:top-0 sena:bottom-0 sena:left-0 sena:right-0 sena:bg-black/60 sena:duration-300"
                 style={{ zIndex: isOpen ? 9998 : -100, opacity: isOpen ? 1 : 0 }}
                 onClick={() => setIsOpen(false)}
             ></div>
