@@ -1,7 +1,7 @@
 {
     "name": "sena-accessibility",
-    "version": "2.0.2",
-    "description": "This is a React/Next.js/TailwindCSS based component library for web accessibility.",
+    "version": "2.1.0",
+    "description": "A customizable accessibility sidebar component for React, Next.js and TailwindCSS projects.",
     "author": "Andrés Gutiérrez Hurtado",
     "license": "MIT",
     "main": "dist/index.cjs.js",
@@ -25,10 +25,12 @@
         "components",
         "web",
         "react",
-        "widget"
+        "widget",
+        "nextjs",
+        "tailwind"
     ],
     "scripts": {
-        "build": "rollup -c",
+        "build": "rollup -c && cp NPM-DOCS.md README.md",
         "dev": "rollup -c --watch",
         "build:tailwind": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
     },
